@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="127.3mm"
+   height="59.155094mm"
+   viewBox="0 0 127.3 59.155094"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/sgob/notes/knowledge/software-engineering/advanced-programming/ap-repo/pics/png/snippet257.png"
+   inkscape:export-xdpi="300.94"
+   inkscape:export-ydpi="300.94"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="snippet257.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.5411756"
+     inkscape:cx="270.89709"
+     inkscape:cy="83.702335"
+     inkscape:window-width="1904"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid846"
+       originx="-13.079166"
+       originy="-1.8490732" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1108"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1106" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1058"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1056" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1052"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1050" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1108"
+       id="linearGradient1110"
+       x1="31.75"
+       y1="13.890625"
+       x2="51.59375"
+       y2="13.890625"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(56.885419,27.781252)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1108"
+       id="linearGradient43086"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(56.885419,39.687499)"
+       x1="31.75"
+       y1="13.890625"
+       x2="51.59375"
+       y2="13.890625" />
+  </defs>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-13.079165,-1.8490734)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round"
+       id="path848-8"
+       sodipodi:type="arc"
+       sodipodi:cx="48.94791"
+       sodipodi:cy="47.625"
+       sodipodi:rx="1.3229166"
+       sodipodi:ry="1.3229166"
+       sodipodi:start="0"
+       sodipodi:end="6.2520661"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 50.270827,47.625 a 1.3229166,1.3229166 0 0 1 -1.312625,1.322877 1.3229166,1.3229166 0 0 1 -1.333048,-1.302294 1.3229166,1.3229166 0 0 1 1.291883,-1.343139 1.3229166,1.3229166 0 0 1 1.353149,1.281395" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round"
+       id="path848-8-2"
+       sodipodi:type="arc"
+       sodipodi:cx="80.697906"
+       sodipodi:cy="29.104168"
+       sodipodi:rx="1.3229166"
+       sodipodi:ry="1.3229166"
+       sodipodi:start="0"
+       sodipodi:end="6.2520661"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 82.020823,29.104168 a 1.3229166,1.3229166 0 0 1 -1.312625,1.322877 1.3229166,1.3229166 0 0 1 -1.333048,-1.302294 1.3229166,1.3229166 0 0 1 1.291883,-1.343139 1.3229166,1.3229166 0 0 1 1.35315,1.281394" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.13386;stroke-linecap:round;stroke-linejoin:round"
+       id="path848-8-6"
+       sodipodi:type="arc"
+       sodipodi:cx="85.989578"
+       sodipodi:cy="29.104168"
+       sodipodi:rx="1.3229166"
+       sodipodi:ry="1.3229166"
+       sodipodi:start="0"
+       sodipodi:end="6.2520661"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 87.312495,29.104168 a 1.3229166,1.3229166 0 0 1 -1.312625,1.322877 1.3229166,1.3229166 0 0 1 -1.333048,-1.302294 1.3229166,1.3229166 0 0 1 1.291883,-1.343139 1.3229166,1.3229166 0 0 1 1.353149,1.281394" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:url(#linearGradient1110);stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round"
+       id="rect1048"
+       width="19.84375"
+       height="6.614583"
+       x="88.635414"
+       y="38.364586" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="37.947689"
+       y="3.81899"
+       id="text15362-30"><tspan
+         sodipodi:role="line"
+         id="tspan15360-7"
+         style="stroke-width:0.264583"
+         x="37.947689"
+         y="3.81899">JVM Memory</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="29.667158"
+       y="8.9157066"
+       id="text15362-30-8"><tspan
+         sodipodi:role="line"
+         id="tspan15360-7-6"
+         style="stroke-width:0.264583"
+         x="29.667158"
+         y="8.9157066">Stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="26.441246"
+       y="38.201611"
+       id="text15362-30-8-4"><tspan
+         sodipodi:role="line"
+         id="tspan15360-7-6-3"
+         style="stroke-width:0.264583"
+         x="26.441246"
+         y="38.201611">main()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="101.19732"
+       y="9.0873833"
+       id="text15362-30-8-8"><tspan
+         sodipodi:role="line"
+         id="tspan15360-7-6-8"
+         style="stroke-width:0.264583"
+         x="101.19732"
+         y="9.0873833">Heap</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="45.860008"
+       y="43.903629"
+       id="text15362-6-9-9"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-1-2"
+         style="stroke-width:0.264583"
+         x="45.860008"
+         y="43.903629">args</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="93.269012"
+       y="36.466404"
+       id="text15362-3-66"><tspan
+         sodipodi:role="line"
+         id="tspan15360-6-4"
+         style="stroke-width:0.264583"
+         x="93.269012"
+         y="36.466404">String</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="89.265221"
+       y="25.296515"
+       id="text15362-3-66-4"><tspan
+         sodipodi:role="line"
+         id="tspan15360-6-4-9"
+         style="stroke-width:0.264583"
+         x="89.265221"
+         y="25.296515">length</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="81.435387"
+       y="20.051289"
+       id="text15362-3-66-2"><tspan
+         sodipodi:role="line"
+         id="tspan15360-6-4-72"
+         style="stroke-width:0.264583"
+         x="81.435387"
+         y="20.051289">String[]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="93.377182"
+       y="42.36578"
+       id="text15362-6-0-9"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-6-5"
+         style="stroke-width:0.264583"
+         x="93.377182"
+         y="42.36578">&quot;eric&quot;</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:url(#linearGradient43086);stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round"
+       id="rect1048-4"
+       width="19.84375"
+       height="6.614583"
+       x="88.635414"
+       y="50.270832" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="93.497688"
+       y="48.445076"
+       id="text15362-3-66-8"><tspan
+         sodipodi:role="line"
+         id="tspan15360-6-4-7"
+         style="stroke-width:0.264583"
+         x="93.497688"
+         y="48.445076">String</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="92.785706"
+       y="54.408157"
+       id="text15362-6-0-9-1"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-6-5-7"
+         style="stroke-width:0.264583"
+         x="92.785706"
+         y="54.408157">&quot;simba&quot;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="79.739891"
+       y="26.38715"
+       id="text15362-6-9-2-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-1-6-7-0"
+         style="stroke-width:0.264583"
+         x="79.739891"
+         y="26.38715">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="85.148094"
+       y="26.37793"
+       id="text15362-6-9-2-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-1-6-7-1"
+         style="stroke-width:0.264583"
+         x="85.148094"
+         y="26.37793">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="95.115837"
+       y="29.435518"
+       id="text15362-6-9-2-8-6-5"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-1-6-7-1-9"
+         style="stroke-width:0.264583"
+         x="95.115837"
+         y="29.435518">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="25.600885"
+       y="44.568089"
+       id="text15362-3-5-1-1"><tspan
+         sodipodi:role="line"
+         id="tspan15360-6-9-2-4"
+         style="stroke-width:0.264583"
+         x="25.600885"
+         y="44.568089">int l </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:1.25;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';stroke-width:0.264583"
+       x="28.517376"
+       y="48.998554"
+       id="text15362-6-9-2-8-2-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan15360-2-1-6-7-2-9-2"
+         style="stroke-width:0.264583"
+         x="28.517376"
+         y="48.998554">2</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round"
+       id="rect20663-4-0"
+       width="9.3473244"
+       height="4.5137382"
+       x="25.048506"
+       y="45.757095" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="rect20893-7-6"
+       width="9.260417"
+       height="5.2916665"
+       x="25.135416"
+       y="44.979168" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect36744"
+       width="127"
+       height="55.5625"
+       x="13.229165"
+       y="5.291667" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.291999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.16799, 1.16799;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect36977"
+       width="44.979168"
+       height="47.625"
+       x="15.874998"
+       y="10.583334" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.291999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.16799, 1.16799;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect36979"
+       width="66.145836"
+       height="47.625"
+       x="68.791664"
+       y="10.583334" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.2, 1.2;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect39159"
+       width="39.6875"
+       height="15.875"
+       x="18.520832"
+       y="39.6875" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect43931"
+       width="23.8125"
+       height="10.583333"
+       x="76.729164"
+       y="21.166666" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect46285"
+       width="3.96875"
+       height="3.96875"
+       x="93.927086"
+       y="26.458334" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 50.270831,47.624999 c 15.875,0 15.875,0 15.875,0 10e-7,-22.489582 10e-7,-22.489582 10e-7,-22.489582 10.583333,0 10.583333,0 10.583333,0"
+       id="path47510" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 80.697914,30.427083 c 0,10.583333 0,10.583333 0,10.583333 7.937501,10e-7 7.937501,10e-7 7.937501,10e-7"
+       id="path47512" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 85.989581,30.427083 c 0,9.260417 0,9.260417 0,9.260417"
+       id="path47514" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 85.989581,42.333333 c 0,10.583333 0,10.583333 0,10.583333 2.645834,10e-7 2.645834,10e-7 2.645834,10e-7"
+       id="path47516" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 85.989581,39.6875 c 0,2.645833 0,2.645833 0,2.645833"
+       id="path47518" />
+  </g>
+</svg>
