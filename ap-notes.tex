@@ -661,7 +661,8 @@ disegnare correttamente buon software. Java è colloquialmente detto essere
 Più metodi possono avere lo stesso nome. Una classe può avere più metodi, anche
 aventi lo stesso nome, ma con parametri differenti di input. Due metodi con
 stessi parametri di input e stesso nome \textbf{non} possono esistere (nemmeno
-se hanno un diverso parametro di ritorno). In particolare,
+se hanno un diverso parametro di ritorno). In particolare, sia dato il seguente
+snippet con il metodo \texttt{println()},
 
 \begin{lstlisting}
 String s = new String("Hello!");
@@ -687,8 +688,8 @@ In questo caso non è importante l'ordine e non ci devono essere duplicati \---
 dunque, trattasi di un insieme di metodi di una classe. Questa capacità di
 avere un insieme di metodi è detta \textbf{method overloading}. Per discernere
 i vari metodi è opportuno adoperare la documentazione (javadoc), ed utilizzare in
-maniera efficiente l'IDE mediante autocompletamento. Solitamente, nel nome del
-metodo è insito che cosa faccia, tenendo anche conto delle \textbf{naming
+maniera efficiente l'IDE mediante autocompletamento. Solitamente, già nel nome
+è insito che cosa faccia il metodo, tenendo anche conto delle \textbf{naming
 conventions}.
 
 In definitiva, due metodi possono avere il medesimo nome, ma devono differire
@@ -699,8 +700,8 @@ nella signature per quanto riguarda i parametri di input.
 Le convenzioni sui nomi sono di cruciale importanza: il codice viene letto da
 umani, ed è dunque necessario che il codice esprima la modellazione della
 realtà. Seguire le convenzioni sui nomi è un passo fondamentale per garantire
-una buona \textbf{qualità del codice}. La scelta corretta dei nomi, dunque, è
-di importanza fondamentale.
+una buona \textbf{qualità del codice}. La corretta scelta dei nomi è, dunque,
+di importanza \textbf{fondamentale}.
 
 \subsection{Nomi di classi}
 
