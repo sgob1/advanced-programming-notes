@@ -760,7 +760,7 @@ nuovo oggetto, e non viene modificata la stringa di per sé.
     \includegraphics[ width=.7\linewidth, height=\textheight, keepaspectratio]{./pics/paintings/snippet59.png}
     \caption{Creazione di oggetti multipli nel semplice contesto di una
     creazione di un oggetto e di un'assegnazione dove sono invocati dei metodi
-dell'oggetto. Ciò avvviene poiché la classe \texttt{String} è
+dell'oggetto. Ciò avviene poiché la classe \texttt{String} è
 \emph{immutabile}.}
     \label{fig:snippet59}
 \end{figure}
@@ -909,7 +909,7 @@ come questa operazione venga di fatto svolta dal metodo della classe.
 L'utilizzatore finale, dunque, è \emph{protetto} da qualsivoglia cambiamento
 interno del modulo, protetto dal principio dell'information hiding \--- egli è
 tenuto ad utilizzare soltanto ciò che viene mostrato esternamente. Lo
-\emph{stato} di un oggetto e il \emph{codice} della classe potrebbe cambiare,
+\emph{stato} di un oggetto e il \emph{codice} della classe potrebbero cambiare,
 ma per l'utente \emph{non è necessario conoscere tali cambiamenti interni}.
 
 L'altro aspetto dell'information hiding è la \textbf{modularità}. Un utente di
@@ -1009,18 +1009,28 @@ moduli di cui egli è responsabile.
       che li ospita. Più costruttori possono coesistere, purché essi
       differiscano nell'argomento. Ogni classe ha un costruttore predefinito,
       detto \emph{costruttore di default} \--- il costruttore di default è
-      automaticamente introdotto da Java qualora non fosse stato esplicitamente
-      dichiarato. Il costruttore di default è invece \textbf{assente} nel caso
-      in cui vengano dichiarati altri costruttori con argomento diverso.
-      L'invocazione del costruttore avviene mediante la parola chiave
-      \texttt{new}, specifica del linguaggio Java, ed obbligatoria nella quasi
-      totalità dei casi, eccezion fatta per oggetti della classe
-      \texttt{String}.
+      \emph{automaticamente introdotto} da Java qualora non fosse stato
+      esplicitamente dichiarato. Il costruttore di default è invece
+      \textbf{assente} nel caso in cui vengano dichiarati altri costruttori con
+      argomento diverso. L'invocazione del costruttore avviene mediante la
+      parola chiave \texttt{new}, specifica del linguaggio Java, ed
+      obbligatoria nella quasi totalità dei casi, eccezion fatta per oggetti
+      della classe \texttt{String}.
   \item[Information hiding] L'\emph{information hiding} è il principio mediante
       il quale le \emph{decisioni sul design} e sulla modellazione che
       subiscono frequenti variazioni vengono nascoste all'utilizzatore, di
       modo di garantirne la protezione e la sicurezza d'utilizzo nel caso
-      drastiche variazioni di design abbiano luogo.
+      drastiche variazioni di design abbiano luogo. Esso è importante per
+      \begin{enumerate}
+          \item permettere all'utilizzatore di non preoccuparsi del
+              funzionamento interno di un modulo;
+          \item proteggere il funzionamento interno del modulo
+              dall'utilizzatore, che potrebbe farne uso improprio o imprevisto;
+          \item proteggere l'utilizzatore da cambiamenti repentini del modulo,
+              con interfacce che non variano mai repentinamente e servizi
+              forniti all'esterno che svolgono sempre lo stesso compito durante
+              il tempo di sviluppo e mantenimento del modulo.
+      \end{enumerate}
 \end{description}
 
 
@@ -1086,12 +1096,12 @@ dove nella prima parte vengono introdotti due \textbf{field}, uno per la parte
 reale ed uno per la parte immaginaria. Viene poi definito un costruttore e due
 metodi (con possibilmente altri da aggiungere). I field sono \emph{oggetti
 contenuti in oggetti} (di altri tipi o dello stesso tipo) \--- i field di un
-oggetto ne rappresentano lo \textbf{stato}. Uno stato è un possibile valore di
-un'istanza appartenente all'universo dei possibili valori di un tipo. I field
-sono referenziati, e sono dunque anche dotati di un identificatore. I field
-hanno un tipo ed un nome del riferimento scelto (identificatore). Essi possono
-essere manipolati tramite la dot notation, in egual maniera che i metodi. Ad
-esempio,
+oggetto ne rappresentano e costituiscono lo \textbf{stato}. Uno stato è un
+possibile valore di un'istanza appartenente all'universo dei possibili valori
+di un tipo. I field sono referenziati, e sono dunque anche dotati di un
+identificatore. I field hanno un tipo ed un nome del riferimento scelto
+(identificatore). Essi possono essere manipolati tramite la dot notation, in
+egual maniera che i metodi. Ad esempio,
 
 \begin{lstlisting}
 public Complex add(Complex other) {
@@ -1107,7 +1117,7 @@ valere le operazioni che vengono evocate, o esistono i field richiesti. I field
 sono corredati dai \textbf{modificatori d'accesso} \--- essi dichiarano
 \emph{quanto visibile} è l'entità appena dichiarata nei confronti di entità
 esterne, ovverosia se sia lecito accedere a tale entità tramite la dot notation
-(vale per field, metodi, classi). Esistono due modificatori d'accesso,
+(vale per field, metodi, classi). Esistono due modificatori d'accesso:
 \begin{itemize}
         \item \texttt{private}: visibile soltanto all'interno del codice della
                 classe stessa, o da altre istanze della medesima classe;
@@ -1302,7 +1312,8 @@ d'accesso \texttt{public}:
 \begin{itemize}
     \item \texttt{private}: non visibile, c'è ma non si può usare;
     \item \texttt{public}: (esplicitamente) visibile;
-    \item \emph{default}: (identificatore assente) visibile.
+    \item \emph{default}: (identificatore assente) visibile (all'interno del
+        pacchetto).
 \end{itemize}
 
 I \textbf{pacchetti (packages)} sono un \emph{insieme} di classi con un nome.
@@ -1374,14 +1385,16 @@ al posto di \texttt{it.units.shapes.Circle}, e rappresenta dunque una
 scorciatoia sintattica, non una qualsivoglia tipologia di
 importazione\footnote{Serve soltanto al programmatore umano, per rendere
 agevole la lettura del codice \--- non comporta pre-caricamento del
-codice, lettura del codice, o altri effetti pratici se non quello di rendere più agevole la scrittura del codice.}. Con \texttt{import}, dichiaro l'uso
+codice, lettura del codice, o altri effetti pratici se non quello di rendere
+più agevole la scrittura del codice.}. Con \texttt{import}, dichiaro l'uso
 dell'abbreviazione con il solo nome della classe, proveniente dal pacchetto
 indicato. La sintassi prevede anche l'uso dell'asterisco per riferirsi a classi
 multiple dello stesso pacchetto (\emph{star import}) \--- al giorno d'oggi si
 evita di utilizzarlo, poiché è l'IDE a creare, in automatico, gli import
-necessari al momento della scrittura del codice. Il Fully Qualified Name è, a
-volte, necessario nel caso di due \emph{classi omonime}, appartenenti a
-pacchetti differenti.
+necessari al momento della scrittura del codice, e non è più richiesto
+necessariamente l'intervento umano per ogni importazione. Il Fully Qualified
+Name è, a volte, necessario nel caso di due \emph{classi omonime}, appartenenti
+a pacchetti differenti.
 
 Quando il compilatore processa il codice sorgente \texttt{.java} e trova una
 classe \texttt{C}, egli deve conoscere i suoi metodi, e field, oltre che il
