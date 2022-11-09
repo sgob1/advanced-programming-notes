@@ -1556,9 +1556,12 @@ S maiuscola e con \texttt{out} classe a lettere tutte minuscole. La classe
 \texttt{System}. Guardando la documentazione per la classe \texttt{System},
 
 \begin{quote}
-    \footnotesize{\texttt{static PrintStream 	err} 	The "standard" error output stream.
-    \texttt{static InputStream 	in} 	The "standard" input stream.
-\texttt{static PrintStream 	out} 	The "standard" output stream.}
+    \footnotesize{\texttt{static PrintStream 	err} The "standard" error output stream.
+
+    \texttt{static InputStream 	in} The "standard" input stream.
+
+    \texttt{static PrintStream 	out} The "standard" output stream.
+    }
 \end{quote}
 
 \texttt{out} risulta essere un field di tipo \texttt{PrintStream}, lo
@@ -1574,9 +1577,13 @@ stringa.
 
 \begin{quote}
     \footnotesize{\texttt{void 	println(int x)} 	Prints an integer and then terminate the line.
+
     \texttt{void 	println(long x)} 	Prints a long and then terminate the line.
+
     \texttt{void 	println(Object x)} 	Prints an Object and then terminate the line.
-\texttt{void 	println(String x)} 	Prints a String and then terminate the line.}
+
+    \texttt{void 	println(String x)} 	Prints a String and then terminate the line.
+    }
 \end{quote}
 
 \subsection{Classi coinvolte}
@@ -1671,7 +1678,7 @@ Le tipiche istruzioni di controllo del flusso sono presenti in java:
 
 \subsection{Basic Input/Output}
 
-Tipicamente, lo standard input proviene dalla tastiera, sotto forma di cartteri
+Tipicamente, lo standard input proviene dalla tastiera, sotto forma di caratteri
 inseriti dall'utente. Lo standard output è, solitamente, anche'esso sotto forma
 di caratteri, via terminale. Di solito essi sono input o output di oggetti
 della classe \texttt{String} o altri tipi primitivi, anche se tipi differenti
@@ -1680,8 +1687,8 @@ un \emph{terminale}. Il modo più basilare per produrre un output è quello di
 utilizzare un'istanza della classe \texttt{PrintStream}: il field statico
 \texttt{out}\footnote{Ci si aspetta che un'applicazione veda già il sistema
 alla partenza, senza che debba essere istanziata un'entità della classe
-\texttt{System}.} della classe \texttt{System}. La classe \texttt{PrintStream} modella
-un \textbf{flusso} per la stampa: ha una serie di metodi, chiamati
+\texttt{System}.} della classe \texttt{System}. La classe \texttt{PrintStream}
+modella un \textbf{flusso} per la stampa: ha una serie di metodi, chiamati
 \texttt{println}, espressi nell'elenco seguente:
 \begin{quote}
 \footnotesize{\texttt{void 	println()}	Terminates the current line by writing the line separator string.
@@ -1725,7 +1732,7 @@ della classe \texttt{String}. La chiamata in sé richiede aggiungere
 \texttt{throws Exception} dopo la signature del \texttt{main}.
 
 L'alternativa è l'uso di un'istanza della classe \texttt{Scanner}. Lo Scanner
-modella una componente software che scansione uno stream di input alla ricerca
+modella una componente software che scansiona uno stream di input alla ricerca
 di sequenze di byte interessanti:
 
 \begin{lstlisting}
@@ -1761,7 +1768,10 @@ double d = Double.parseDouble(String);
 
 Gli array in Java sono molto simili a quelli in C. Un \textbf{array} è una
 sequenza di oggetti dello stesso tipo, con lunghezza \emph{fissata} che non può
-mai cambiare al runtime. Sono cosiddetti ``0-based indexing''\footnote{Questo assunto, che per uno studentello di C parrebbe ovvio, non è affatto scontato: sia il linguaggio \textsc{Matlab} che \texttt{R} fanno uso di array ``1-based'', cioè che contano a partire da 1.}. Ciascun oggetto è accessibile
+mai cambiare al runtime. Sono cosiddetti ``0-based indexing''\footnote{Questo
+assunto, che per un utilizzatore di C parrebbe ovvio, non è affatto scontato:
+sia il linguaggio \textsc{Matlab} che \texttt{R} fanno uso di array
+``1-based'', cioè che contano a partire da 1.}. Ciascun oggetto è accessibile
 mediante l'operatore \texttt{[]} applicato al riferimento. Gli array
 \textbf{contengono i riferimenti}.
 
@@ -1810,12 +1820,12 @@ System.out.println(dogNames.length); //prints 3
 \subsection{Iterazione all'interno di array}
 
 L'iterazione su array può avvenire in due forme, una ``classica'' e una dove
-avviene una semplice iterazione senza contatore, \emph{itera su tutti gli
+avviene una semplice iterazione senza contatore e che \emph{itera su tutti gli
 elementi dell'array}.
 
 \begin{lstlisting}
 String[] dogNames = {"Simba", "Gass"};
-for (int i = 0; i<dogNames.length; i++) {
+for (int i = 0; i < dogNames.length; i++) {
   System.out.println("Dog " + i + " name is " + dogNames[i]);
 }
 //////////////////////////////////////////
