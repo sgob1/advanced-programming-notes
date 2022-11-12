@@ -1864,7 +1864,7 @@ Tuttavia, c'è una limitazione importante, che sia l'ultimo parametro di input
 \begin{lstlisting}
 public static double max(double... values) {
   double max = values[0];
-  for (int i = 1; i<values.length; i++) {
+  for (int i = 1; i < values.length; i++) {
     max = (max > values[i]) ? max : values[i];
   }
   return max;
@@ -2298,16 +2298,17 @@ dove il valore di \texttt{isNull} sarà \texttt{true}.
 \item[Inizializzazione dei tipi non primitivi] I tipi non primitivi non godono
     di un'inizializzazione di default. I riferimenti ad oggetti di tipo non
     primitivo che non sono stati inizializzati faranno riferimento a
+    \texttt{null}.
 \item[Assegnazione di un tipo primitivo] L'assegnazione per i tipi primitivi
     copia il valore, non il riferimento (diversamente da quanto accade per gli
     oggetti di tipo non primitivo).
-    \texttt{null}.
 \item[Il tipo \texttt{null}] Il tipo \texttt{null} rappresenta \emph{il nulla}.
     Esso è un valore speciale che può essere referenziato da un riferimento di
     qualsiasi tipo, non primitivo. Invocare qualcosa che fa riferimento a
     \texttt{null} comporta un errore di compilazione. Esiste un metodo
     apposito, \texttt{isNull()}, che ci fornisce un booleano e che ci consente
-    di capire se un oggetto in particolare è \texttt{null} oppure no.
+    di capire se un oggetto in particolare è \texttt{null} oppure no. Il metodo
+    \texttt{isNull()} fa parte della classe \texttt{Objects}.
 \end{description}
 
 
@@ -3394,23 +3395,21 @@ Si vuole modellare i \emph{multiset} e le \emph{sequenze}. Matematicamente,
         volte). Essa potrebbe essere modellata da 
         
 
-\begin{minipage}[c]{1\textwidth}\begin{lstlisting}
+\begin{lstlisting}
 public class BagOfInts {
   private int[] values;
 }
-\end{lstlisting}\end{minipage}
-
+\end{lstlisting}
     \item un \emph{insieme delle sequenze} di interi è un $$\mathcal X = \bigcup
         _{i\in\mathbb{N}}\mathbb{Z}^i.$$ La relazione di equivalenza stavolta
         considera, per due elementi $x_1$, $x_2$, anche l'\emph{ordine} degli
         elementi presenti. In questo caso, potrebbe essere modellata con
 
-\begin{minipage}[c]{1\textwidth}\begin{lstlisting}
+\begin{lstlisting}
 public class SequenceOfInts {
   private int[] values;
 }
-\end{lstlisting}\end{minipage}
-
+\end{lstlisting}
 \end{itemize}
 
 Osserviamo che la modellazione, almeno in questo caso, è identica dal punto di
@@ -4587,7 +4586,7 @@ poiché chiama, uno dopo l'altro, \texttt{write(b[i])}, cioè fa una cosa simile
 
 \begin{lstlisting}
 public void write(byte[] b, int off, int len) {
-  for (int i = off; i<off+len; i++) {
+  for (int i = off; i < off+len; i++) {
     write(b[i]); // calls write
   }
 }
@@ -5990,7 +5989,7 @@ protected void handleClient(Socket socket) throws IOException {
 private double[] readVector(DataInputStream dis) throws IOException {
   int length = dis.readInt();
   double[] values = new double[length];
-  for (int i = 0; i<values.length; i++) {
+  for (int i = 0; i < values.length; i++) {
     values[i] = dis.readDouble();
   }
   return values;
