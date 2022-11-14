@@ -90,17 +90,18 @@
 %\usepackage[usefilenames,RMstyle={Text,Text},SSstyle={Text,Semibold},TTstyle={Text,Bold},DefaultFeatures={Ligatures=Common}]{plex-otf} %
 %\usepackage[stickstoo]{newtxmath}
 %\usepackage[sc]{mathpazo}
-\usepackage{XCharter}
-\usepackage[charter]{mathdesign}
+%\usepackage{nimbusserif}
+%\usepackage[scaled]{beramono}
+\usepackage[sc,osf]{mathpazo}
+\usepackage[euler-digits,small]{eulervm}
+%\usepackage{XCharter}
+%\usepackage[charter]{mathdesign}
 %\usepackage[p]{scholax}
 %\usepackage[scaled=1.075,ncf]{newtxmath}
 %\usepackage[nomath,variablett]{lmodern}
 %\usepackage[sfdefault,book]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
 %\usepackage{FiraMono}
 %\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
-%\usepackage{nimbusserif}
-%\usepackage[scaled]{beramono}
-%\usepackage[scaled]{beramono}
 \begin{document}
 
 %\include{\titlepagename}
@@ -3669,11 +3670,11 @@ Il passaggio \textbf{by value} prevede che la funzione chiamata riceva
 reference} prevede che la funzione chiamata riceva, invece, \textbf{l'oggetto
 stesso}, o meglio una \textbf{copia del riferimento} dell'oggetto. I tipi
 primitivi sono passati sempre \emph{by value}, mentre i tipi non primitivi sono
-sempre passati \emph{by reference}. Il tipo del passaggo, pertanto, è una fra
+sempre passati \emph{by reference}. Il tipo del passaggio, pertanto, è una fra
 le differenze cruciali che i tipi non primitivi presentano rispetto ai tipi
 primitivi.
 
-Poiché \texttt{Person p} è un tipo non primitivo, viene passa una copia per
+Poiché \texttt{Person p} è un tipo non primitivo, viene passata una copia per
 riferimento. La modifica perciò avrà un effetto visibile anche successivamente.
 Per esempio,
 
@@ -3781,7 +3782,7 @@ Nella pratica, vi sono 3 casi d'uso:
 \begin{itemize}
     \item definire delle \textbf{costanti}, specialmente nel caso dei field;
     \item limitare la \textbf{riusabilità}, caso molto raro \-- in linea di
-        principio, potrebbe esistere dei casi in cui è desiderabile che dei
+        principio, potrebbero esistere dei casi in cui sia desiderabile che dei
         metodi non \texttt{private} mantengano un accesso regolato allo stato
         interno dell'oggetto (ad esempio, per i \textbf{getter} ed i
         \textbf{setter}). Tali metodi andrebbero impostati come \texttt{final},
@@ -3799,7 +3800,7 @@ Una costante per l'oggetto (object-wise) è un field \textbf{immutabile} che pu�
 differenti per i diversi oggetti, ma che una volta fissato non può cambiare. Di
 solito, per tali field viene deciso un modificatore \texttt{final private}.
 
-Di contro, una costante per la classe (constant-wise) è un field
+Di contro, una costante per la classe (class-wise) è un field
 \textbf{globale} e \textbf{immutabile}, cioè un placeholder per un valore
 codificato e costante per tutte le istanze. Esse sono dichiarate mediante i
 modificatori \texttt{final static}, con il modificatore \texttt{static} che la
@@ -3843,7 +3844,7 @@ public class Doc extends Person {
 
 dove viene specificato che \textbf{ogni} istanza della classe \texttt{Doc}
 contiene il prefisso \texttt{"Dr."}. Poiché si tratta di una costante
-\texttt{globale ed immutabile}, viene adoperata una nuova naming convention:
+\textbf{globale ed immutabile}, viene adoperata una nuova naming convention:
 \textbf{tutto maiuscolo e parole separate mediante underscore}.
 
 Un esempio di ciò è la costante globale \texttt{Math.PI}, con modificatore
@@ -4003,7 +4004,7 @@ Vi sono tuttavia 5 possibili migliorie al frammento:
 
 \subsection{Scope per field, metodi e classi \-- il modificatore \texttt{protected}}
 
-Abbiamo discusso dello scopde delle variabili, ora invece affronteremo lo scope
+Abbiamo discusso dello scope delle variabili, ora invece affronteremo lo scope
 relativo a field, metodi e classi.
 
 Per quanto riguarda i field, metodi e classi lo scope è \textbf{determinato dal
@@ -4012,7 +4013,7 @@ modificatore d'accesso}.
 I field, noti anche come \texttt{instance variables}, i metodi e le classi
 possono godere di un modificatore d'accesso particolare oltre che a quello
 \texttt{public}, \texttt{private} e di default, chiamato \textbf{protected} \--
-il modificatore \texttt{protected} rende visibile \texttt{solo nella classe che
+il modificatore \texttt{protected} rende visibile \textbf{solo nella classe che
 estende} direttamente o indirettamente la classe dove \texttt{protected} è
 utilizzato.
 
@@ -4054,6 +4055,23 @@ public void run() {
   int n = doThings(name); // C
 }
 \end{lstlisting}
+
+\section{Riassunto del capitolo}
+
+\begin{description}
+    \item[Passaggio dei parametri] Il passaggio dei parametri avviene \emph{by value} o \emph{by reference} seguendo una semplice regola: il passaggio by value avviene sempre e solo per \emph{tipi primitivi}, mentre il passaggio by reference accade sempre e soltanto per \emph{tipi non primitivi}. Gli oggetti vengono perciò passati per riferimento, nel senso che avviene una copia del riferimento durante la chiamata ad una funzione. È possibile modificare e manipolare perciò gli oggetti all'interno delle funzioni tramite il riferimento copiato, con risultati visibili anche al termine dell'invocazione del metodo.
+    \item[Il modificatore \texttt{final}] Il modificatore \texttt{final} è una keyword statica (ha effetti in atto di compilazione) che fa sì che il tipo primitivo o il riferimento ad un tipo non primitivo sia \emph{immutabile}. Dunque, tipi primitivi con modificatore \texttt{final} assumeranno l'aspetto di costanti, mentre riferimenti ad oggetti di tipi non primitivi con modificatore \texttt{final} non potranno fare riferimento ad altri oggetti. L'oggetto di tipo non primitivo che viene riferito da un riferimento con modificatore \texttt{final} può comunque cambiare il proprio stato. I casi d'uso sono, in ordine di importanza, la definizione di \emph{costanti}, il limitare la \emph{riusabilità} e il rimarcare l'\emph{immutabilità}. È buona norma applicare \texttt{final} a qualsivoglia variabile non debba essere modificata, sia negli argomenti di metodi che nei cicli for each.
+    \item[Costanti object-wise] Field \emph{immutabili} che possono assumere valori differenti per ogni istanza di un oggetto, ma che una volta fissati non possono essere in nessun caso modificati. Solitamente, gli viene applicato un modificatore \texttt{final private}.
+    \item[Costanti class-wise] Field \emph{globali immutabili} comuni a tutte le istanze. Essi vengono dichiarati come field e immediatamente il loro valore viene definito tramite la sintassi dell'assegnazione. Per essi si adopera la sintassi tutto maiuscolo, parole separate da underscore; ad esempio, \texttt{TITLE\_PREFIX}.
+    \item[Scope] Proprietà \emph{statica} degli identificatori che esplicita in quale porzione di codice l'identificatore può essere adoperato -- essa è influenzata non solo dal tipo di oggetto, ma anche dai costrutti adoperati.
+    \item[Lifetime] Proprietà \emph{dinamica} degli identificatori che esplicita l'intervallo di tempo entro il quale un oggetto o un riferimento esiste -- essa è influenzata dal tipo di oggetto.
+    \item[Scope nei metodi] I riferimenti dichiarati nella signature di un metodo valgono in tutto e solo il metodo.
+    \item[Scope nei costrutti] I riferimenti dichiarati nel codice sono visibili dal momento stesso della dichiarazione fino alla fine del blocco dove sono state dichiarate. Se dichiarate all'interno di cicli, esse sono visibili esclusivamente durante il singolo ciclo.
+    \item[Il modificatore \texttt{protected}] Quarto modificatore d'accesso -- oltre a \texttt{private}, \texttt{public} e a quello di default -- che rende visibile l'entità soltanto \emph{nella classe che estende} direttamente o indirettamente la classe dove \texttt{protected} è utilizzato.
+    \item[Scope per field, metodi e classi] Lo scope per field, metodi e classi è determinato dal modificatore d'accesso, secondo regole già viste sino ad ora.
+    \item[Lifetime per tipi primitivi] Il tempo di vita per tipi primitivi è legato allo scope: essi esistono finché sono nello scope.
+    \item[Lifetime per tipi non primitivi] I tipi non primitivi esistono a partire dallo statement che include il \texttt{new} per la loro creazione ed esistono \emph{almeno} finché sono referenziati. Per i tipi non primitivi \emph{non è noto} il momento esatto in cui essi cessano di esistere -- ovvero quando il \emph{garbage collector} si occupa di eliminarli dalla memoria.
+\end{description}
 
 
 \chapter{La memoria della Java Virtual Machine}
@@ -4426,6 +4444,7 @@ l'autounboxing dei numeri di sopra, e vengono paragonati i valori \texttt{301
 
 È meglio adoperare il metodo \texttt{equals()} quando vi è da fare un paragone
 (l'IDE lo evidenzia).
+
 
 \chapter{Input ed output avanzati}
 
