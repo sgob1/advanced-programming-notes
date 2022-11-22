@@ -101,23 +101,6 @@
 \setlength{\tabcolsep}{0.5em} % for the horizontal padding
 {\renewcommand{\arraystretch}{1.35}% for the vertical padding
 
-%\usepackage{stickstootext}
-%\usepackage[stickstoo]{newtxmath}
-%\usepackage[usefilenames,RMstyle={Text,Text},SSstyle={Text,Semibold},TTstyle={Text,Bold},DefaultFeatures={Ligatures=Common}]{plex-otf} %
-%\usepackage[stickstoo]{newtxmath}
-%\usepackage[sc]{mathpazo}
-%\usepackage{nimbusserif}
-%\usepackage[scaled]{beramono}
-%\usepackage[sc,osf]{mathpazo}
-%\usepackage[euler-digits,small]{eulervm}
-%\usepackage{XCharter}
-%\usepackage[charter]{mathdesign}
-%\usepackage[p]{scholax}
-%\usepackage[scaled=1.075,ncf]{newtxmath}
-%\usepackage[nomath,variablett]{lmodern}
-%\usepackage[sfdefault,book]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
-%\usepackage{FiraMono}
-%\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
 \begin{document}
 
 %\include{\titlepagename}
@@ -4464,6 +4447,22 @@ l'autounboxing dei numeri di sopra, e vengono paragonati i valori \texttt{301
 
 È meglio adoperare il metodo \texttt{equals()} quando vi è da fare un paragone
 (l'IDE lo evidenzia).
+
+\section{Riassunto del capitolo}
+
+\begin{description}
+    \item[Heap] Zona di memoria dove risiedono tutti gli \emph{oggetti di tipo non primitivo}, da considerarsi a lungo termine. In esso sono collocati tutti gli oggetti creati con la parola chiave \textbf{new}, dunque tutti gli oggetti non primitivi risiedono nello heap. Gli array stanno nello heap---anche quelli composti da tipi primitivi. Poiché nello heap risiedono gli oggetti di tipo non primitivo con tutti i loro dati, anche i field---siano essi di tipo primitivo o non primitivo---risiedono nello heap. La dimensione dello heap è determinata \emph{dinamicamente}. Esiste un solo heap per ogni istanza di Java Virtual Machine. Lo heap è generalmente molto più grande dello stack.
+    \item[Stack] Zona di memoria dove risiedono tutti gli \emph{oggetti di tipo primitivo} che non siano field e tutti i \emph{riferimenti}. Esso è detto `stack' in quanto per ogni execution thread ciascuna chiamata ad un metodo produce un nuovo blocco, che viene poi liberato appena il metodo consegna il valore di ritorno. Dunque, tutte le variabili locali dichiarate all'interno di metodi o signature. La dimensione di ogni blocco dello stack è predeterminabile dal momento dell'invocazione del metodo, scegliendo sempre la massima quantità di memoria necessaria al percorso più critico dal punto di vista dell'allocazione in memoria; oltre a ciò, l'accesso allo stack è generalmente più veloce dell'accesso allo heap.
+    \item[Passaggio dei parametri in Java] In Java, esistono due tipi di passaggio di parametri: \emph{by value} e \emph{by reference}. Il primo è prerogativa dei riferimenti e dei tipi primitivi, il secondo invece è specifico degli oggetti. Per i tipi primitivi, gli oggetti di tipo primitivo sono il loro stesso riferimento: i due concetti coincidono, ed essi non possono essere riferiti da altri riferimenti. Per i tipi primitivi, l'identificatore è l'oggetto stesso; l'assegnazione creerà una \emph{copia} del loro valore. Diversamente, per i tipi non primitivi il riferimento è un concetto distinto dall'oggetto, dunque più riferimenti possono riferire al medesimo oggetto. I tipi primitivi non possono pertanto fare riferimento a \texttt{null} (invece i tipi non primitivi possono) ed infine l'operatore di uguaglianza per i tipi non primitivi ne verifica l'uguaglianza del riferimento, non dell'oggetto.
+    \item[Memoria richiesta per allocare tipi primitivi] La memoria richiesta per allocare tipi primitivi è nota a priori: 1 byte per \texttt{byte}, 2 byte per \texttt{short} e \texttt{char}, 4 byte per \texttt{int} e \texttt{float} ed infine 8 byte per \texttt{long} e \texttt{double}. I \texttt{boolean} occupano al minimo 1 bit ed almeno 8 bit: possono essere collassati fino a 8 \texttt{boolean} in un unico byte. 
+    \item[Memoria richiesta per allocare riferimenti] I riferimenti occupano 4 byte per dimensioni dello heap inferiori a 32GB, 8 byte per dimensioni dello heap superiori a 32GB.
+    \item[Garbage collection] Procedura secondo la quale lo heap viene svuotato degli oggetti senza un adeguato riferimento, cioè oggetti i quali riferimenti sono tutti fuori dallo scope del programma in esecuzione, al fine di prevenire il riempimento della memoria e l'eccessivo consumo di essa. La garbage collection è, in generale, una tecnica che comprende famiglie di algoritmi di diverse prestazioni ed efficacia per determinare gli oggetti nello heap da eliminare, con tipicamente un compromesso fra tempo impiegato per la collection ed efficacia. Il garbage collector può essere invocato dalla Java Virtual Machine in qualsiasi momento, non predeterminabile---è comunque possibile suggerire esplicitamente nel codice tramite il metodo statico \texttt{System.gc()} di eseguire la garbage collection, senza tuttavia garanzia di risultati. In generale, la garbage collection è un ottimo sistema per ridurre l'onere della gestione della memoria allo sviluppatore, benché introduca una perdita di performance non predicibile, non determinabile a priori.
+    \item[Parametri a riga di comando per specificare la memoria disponibile per la JVM] Vari parametri a riga di comando esistono (su ambiente Linux, digitare \texttt{man java}): \texttt{-Xms} indica la dimensione di partenza dello heap; \texttt{-Xmx} indica la dimensione massima dello heap; \texttt{-Xss} permette di specificare la dimensione massima dello stack. Errori associati alla memoria sono \texttt{java.lang.OutOfMemoryError} e \texttt{java.lang.StackOverFlowError}.
+    \item[Wrapper classes] Classi wrapper per tipi primitivi, una per ciascun tipo primitivo. Sono dotate di field statici quali \texttt{BYTES}, \texttt{MAX\_VALUE} e \texttt{MIN\_VALUE} e di pseudo-costruttori per fare il parsing del tipo da una stringa e per restituire il valore (specifici getter e setter).
+    \item[Autoboxing e autounboxing] Scorciatoie sintattiche del linguaggio Java che consentono di trattare nel codice i tipi wrapper come tipi primitivi, eseguendo automaticamente la conversione da tipi primitivi a tipi non primitivi. L'autoboxing e l'autounboxing avviene esclusivamente se un tipo wrapper non primitivo deve entrare in contatto in un'espressione con un tipo primitivo compatibile.
+\end{description}
+
+
 
 
 \chapter{Input ed output avanzati}
