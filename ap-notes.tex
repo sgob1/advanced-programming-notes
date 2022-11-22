@@ -4673,7 +4673,7 @@ con relativa connessione TCP \-- prima di poterla adoperare, dunque, essa dovrà
 essere creata.
 
 La classe \texttt{File} modella l'ubicazione di un file, con le corrispondenti
-\emph{system calls} dentro e sotto la JVM.
+\emph{system call} dentro e sotto la JVM.
 
 Dalla documentazione della classe \texttt{FileOutputStream},
 \begin{quote}
@@ -4747,9 +4747,9 @@ Tutte le classi ``output stream'' viste fino ad ora sono sottoclassi
 
 \subsection{L'End Of Stream}
 
-L'\textbf{end of stream} (EOS) è un marcatore logico di cui non interessa la
+L'\textbf{end of stream} (\texttt{EOS}) è un marcatore logico di cui non interessa la
 dimensione, il cui scopo è delimitare lo stream \-- oltre a tale marcatore, non
-c'è più nulla. Il marcatore EOS è inserito dal comando \texttt{os.close()}, il
+c'è più nulla. Il marcatore \texttt{EOS} è inserito dal comando \texttt{os.close()}, il
 che chiude definitivamente lo stream, e non è più possibile scrivere nulla con
 esso:
 
@@ -4804,7 +4804,7 @@ rappresentano un input stream di byte}.
 
 L'input stream legge solo array \texttt{byte[]}, e il metodo
 \texttt{InputStream.nullInputStream()} fornisce un dispositivo di input dal
-quale non vi sono byte da leggere (EOS collocato alla posizione 0,
+quale non vi sono byte da leggere (\texttt{EOS} collocato alla posizione 0,
 l'equivalente di \texttt{/dev/null}).
 
 In lettura, si adopera il metodo \texttt{read()}. In particolare,
@@ -4855,10 +4855,12 @@ figlie di (che ereditano da) \texttt{Input\-Stream}, infatti secondo la
 documentazione della classe \texttt{FileInputStream}
 
 \begin{quote}
+    \footnotesize{
 A FileInputStream obtains input bytes from a file in a file system. What files are available depends on the host environment.
 
 \texttt{FileInputStream(File file)} 	Creates a FileInputStream by opening a connection to an actual file, the file named by the File object file in the file system.
 \texttt{FileInputStream(String name)} 	Creates a FileInputStream by opening a connection to an actual file, the file named by the path name name in the file system.
+    }
 \end{quote}
 
 Un oggetto della classe \texttt{ByteArrayInputStream} {\footnotesize contains an
@@ -4877,17 +4879,17 @@ Essa ha come costruttori
 
 La principale differenza fra input ed output stream risiede nella gestione
 dell'End of Stream. Se infatti per un output stream \textbf{non vi sono in
-principio limiti nella scrittura} e bisognerà piazzare un EOS qualora servisse
+principio limiti nella scrittura} e bisognerà piazzare un \texttt{EOS} qualora servisse
 chiudere il dispositivo, per un input stream \textbf{i dati leggibili sono
-limitati}, poiché potrebbe esistere già un EOS nel device che
+limitati}, poiché potrebbe esistere già un \texttt{EOS} nel device che
 \texttt{Input\-Stream} astrae.
 
 Sia infatti nel caso in cui si faccia uso di un \texttt{FileInputStream} che di
 un \texttt{ByteArrayInputStream}, i device avranno una dimensione limitata,
-perciò esisterà un EOS ad essi relativo (o comunque il device avrà una
+perciò esisterà un \texttt{EOS} ad essi relativo (o comunque il device avrà una
 dimensione limitata di dati da leggere, almeno temporaneamente).
 
-Infatti, esiste una distinzione netta nel caso di lettura con EOS e senza:
+Infatti, esiste una distinzione netta nel caso di lettura con \texttt{EOS} e senza:
 \begin{quote}
     \footnotesize{\texttt{int 	read(byte[] b, int off, int len)} 	Reads up to
         len bytes of data from the input stream into an array of bytes.
@@ -4906,16 +4908,17 @@ byte is read and stored into b.}
 \end{quote}
 
 In altre parole, al termine della disponibilità dei dati proveniente da un
-input buffer, o viene trovato un EOS, oppure il metodo viene bloccato finché
+input buffer, o viene trovato un \texttt{EOS}, oppure il metodo viene bloccato finché
 non sono disponibili altri dati.
 
-Nel caso il prossimo byte sia un EOS, viene restituito immediatamente -1, nel
-caso di nessun dato disponibile metti in attesa. Diversamente, se vi sono dati
-disponibili, li leggerà tutti fino ad un massimo di \texttt{len} bytes letti
-restituendo il numero di byte letti.
+Nel caso il prossimo byte sia un \texttt{EOS}, viene restituito immediatamente
+\texttt{-1}, nel caso di nessun dato disponibile il metodo viene messo in
+attesa. Diversamente, se vi sono dati disponibili, il metodo li leggerà tutti
+fino ad un massimo di \texttt{len} bytes letti restituendo il numero di byte
+letti.
 
 Per esempio, si supponga un device contenente 5 byte all'istante zero, e
-ricevente al secondo 10 altri 3 byte, seguiti da un EOS. Eseguendo le
+ricevente al secondo 10 altri 3 byte, seguiti da un \texttt{EOS}. Eseguendo le
 istruzioni di seguito si otterrebbe l'effetto indicato nei commenti,
 
 \begin{lstlisting}
@@ -4929,16 +4932,16 @@ is.read(buf, 0, 3);
 // t~10 -> t~10, ret -1
 \end{lstlisting}
 
-dunque incontrando un EOS durante la lettura si otterrebbe il valore di ritorno
+dunque incontrando un \texttt{EOS} durante la lettura si otterrebbe il valore di ritorno
 -1.
 
 Il blocco e l'attesa di input del metodo \texttt{read()} sono necessari per
 l'attesa di input: si pensi all'\texttt{Input\-Stream} \texttt{System.in}, in
 questo caso finché non viene premuto il tasto di ``invio'' l'input stream non
 può ricevere alcunché. Fra l'altro, il \texttt{close()} su \texttt{System.in}
-non ha alcun effetto. Parimenti, per un dispositivo di rete \texttt{InputStream
-getInputStream()} legge dati dal socket mentre essi arrivano, e mette il tutto
-in attesa finché non arrivano altri dati.
+non ha alcun effetto. Parimenti, per un dispositivo di rete, lo stream
+\texttt{InputStream getInputStream()} legge dati dal socket mentre essi
+arrivano, e mette il tutto in attesa finché non arrivano altri dati.
 
 \subsection{Lettura e scrittura di un file}
 
@@ -4962,37 +4965,37 @@ operazioni analoghe,
 \begin{quote}
     \footnotesize{\texttt{boolean 	canExecute()} 	Tests whether the application can execute the file denoted by this abstract pathname.
 
-\texttt{boolean 	canRead(}) 	Tests whether the application can read the file denoted by this abstract pathname.
+\texttt{boolean 	canRead()} 	Tests whether the application can read the file denoted by this abstract pathname.
 
-\texttt{boolean 	canWrite(}) 	Tests whether the application can modify the file denoted by this abstract pathname.
+\texttt{boolean 	canWrite()} 	Tests whether the application can modify the file denoted by this abstract pathname.
 
-\texttt{boolean 	delete(}) 	Deletes the file or directory denoted by this abstract pathname.
+\texttt{boolean 	delete()} 	Deletes the file or directory denoted by this abstract pathname.
 
-\texttt{boolean 	exists(}) 	Tests whether the file or directory denoted by this abstract pathname exists.
+\texttt{boolean 	exists()} 	Tests whether the file or directory denoted by this abstract pathname exists.
 
-\texttt{boolean 	isDirectory(}) 	Tests whether the file denoted by this abstract pathname is a directory.
+\texttt{boolean 	isDirectory()} 	Tests whether the file denoted by this abstract pathname is a directory.
 
-\texttt{String[] 	list(}) 	Returns an array of strings naming the files and directories in the directory denoted by this abstract pathname.
+\texttt{String[] 	list()} 	Returns an array of strings naming the files and directories in the directory denoted by this abstract pathname.
 
-\texttt{File[] 	listFiles(}) 	Returns an array of abstract pathnames denoting the files in the directory denoted by this abstract pathname.
+\texttt{File[] 	listFiles()} 	Returns an array of abstract pathnames denoting the files in the directory denoted by this abstract pathname.
 
-\texttt{boolean 	mkdir(}) 	Creates the directory named by this abstract pathname.
+\texttt{boolean 	mkdir()} 	Creates the directory named by this abstract pathname.
 
-\texttt{boolean 	renameTo(File dest}) 	Renames the file denoted by this abstract pathname.
+\texttt{boolean 	renameTo(File dest)} 	Renames the file denoted by this abstract pathname.
 
 \texttt{boolean 	setExecutable(boolean executable}) 	A convenience method to set the owner's execute permission for this abstract pathname.}
 \end{quote}
 
 non è tuttavia possibile leggere o scrivere dai file (non sono stream!). 
 
-L'apertura avviene tramite lo stream \texttt{FileOutputStream(File file)} o
+L'apertura avviene tramite gli stream \texttt{FileOutputStream(File file)} oppure
 \texttt{FileOutputStream(String name)}. Quando si esegue un tentativo di
 scrittura di un file tramite uno stream, questi accederà al file ``reale''
 ospitato tramite il sistema operativo mediante l'oggetto di classe
 \texttt{File}. Qualora la stringa dello stream non rappresenti un file
 realmente esistente in memoria, \textbf{questi viene creato}. Attenzione,
 poiché \textbf{il contenuto del file viene cancellato se non viene specificato
-il flag booleano \texttt{append}}.
+il flag booleano \texttt{append}!}
 
 L'effettiva scrittura e lettura di un file dipendono dal sistema operativo
 sottostante.
@@ -5083,8 +5086,11 @@ stavolta di input,
     \texttt{DataInputStream(InputStream in)} 	Creates a DataInputStream that uses the specified underlying InputStream.
 
     \texttt{double 	readDouble()} 	See the general contract of the readDouble method of DataInput.
+
     \texttt{float 	readFloat()} 	See the general contract of the readFloat method of DataInput.
+
     \texttt{int 	readInt()} 	See the general contract of the readInt method of DataInput.
+
     \texttt{long 	readLong()} 	See the general contract of the readLong method of DataInput.
     }
 \end{quote}
@@ -5164,22 +5170,23 @@ compressi dall'algoritmo \texttt{gzip}, con annessa struttura di directory.
 Esistono anche \texttt{ZipInputStream} e \texttt{ZipOutputStream}, classi per
 modellare gli stream di file \texttt{Zip}.
 
-\chapter{Buffered input and output}
+\section{Buffered input and output}
 
 La maggior parte dei dispositivi sono scritti e letti dal sistema operativo. In
 quasi tutti i casi (tranne che nel \texttt{ByteArrayOutputStream}) il device è
 un \emph{dispositivo fisico}, per il quale accesso è necessario fare domanda al
 sistema operativo da parte della JVM. Vi sono vari livelli di astrazione,
-\begin{itemize}
+\begin{enumerate}
     \item l'output stream;
     \item il sistema operativo;
     \item il device fisico.
-\end{itemize}
+\end{enumerate}
 
 I dispositivi fisici sono dotati, per loro caratteristica, di una
 \textbf{dimensione ideale} delle richieste di lettura e scrittura \-- ad
-esempio, nel caso degli hard disk tipicamente si richiedono dimensioni di 8KB
-per questioni di ottimalità. La medesima cosa avviene per i protocolli di rete.
+esempio, nel caso degli hard disk tipicamente si richiedono dimensioni di
+lettura e scrittura pari a 8KB per questioni di ottimalità. La medesima cosa
+avviene per i protocolli di rete.
 
 Invocare il sistema operativo è \textbf{costoso}.
 Da una parte sappiamo per conoscenza del dominio informatico che ogni
@@ -5194,12 +5201,13 @@ JVM chiede al sistema operativo di scrivere o leggere altrettanti $n$ byte. Ci
 si aspetta dunque che il sistema operativo renda ottimale la richiesta,
 adattandola al caso ideale del dispositivo.
 
-La soluzione sono i \textbf{buffered stream}. I buffered stream sono stream
-dotati di un buffer. Il buffer mantiene i dati in esso, finché non è il momento
-opportuno per inviare i dati al sistema operativo. Esistono due classi,
-\texttt{BufferedOutputStream}, e \texttt{BufferedInputStream}. Sono sempre
-montati su un \texttt{Output\-Stream}, dunque offrono la medesima interfaccia,
-tuttavia sono dotati di \textbf{buffering}. 
+La soluzione (in Java) di tale problema sono i \textbf{buffered stream}. I
+buffered stream sono stream dotati di un buffer. Il buffer mantiene i dati in
+esso, finché non è il momento opportuno per inviare i dati al sistema
+operativo. Esistono due classi, \texttt{BufferedOutputStream}, e
+\texttt{BufferedInputStream}, che sono montate su di un
+\texttt{Output\-Stream}, dunque offrono la medesima interfaccia; tuttavia sono
+dotati di \textbf{buffering}.
 
 Un \texttt{BufferedOutputStream} riceve richieste come al solito, però mette i
 dati in un buffer, e \textbf{solo quando pieno} fa una richiesta al successivo
