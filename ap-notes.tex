@@ -49,12 +49,13 @@
 \usepackage{makecell}
 \usepackage{setspace}
 \usepackage{parskip}
+\usepackage[normalem]{ulem}
 \usepackage[a4paper, landscape, top=2cm, bottom=2cm, inner=\innermargin, outer=\outermargin]{geometry}
 
 \font \bodyfontfs = "\bodyfont"
 \font \sansfontfs = "\sansfont"
 \font \scfontfs = "\scfont"
-%\font \monofontfs = "\monospacefont"
+\font \monofontfs = "\monospacefont"
 \font \Footheadfontfs = "\Footheadfont"
 \font \footheadfontfs = "\footheadfont"
 
@@ -5314,8 +5315,8 @@ si fa uso dei charset.
 L'input\----output avviene tramite classi analoghe a quelle già viste per i
 dati binari, con la stessa interfaccia ed il nome semplicemente diverso:
 avremo le classi \texttt{Writer} e \texttt{Reader} che sostituiranno le classi
-\texttt{Output\-Stream} ed \texttt{Input\-Stream}. Essi possono entrambi essere
-manipolati tramite il filter pattern, e possono essere associati con i
+\texttt{Output\-Stream} ed \texttt{Input\-Stream}. Esse possono entrambe essere
+manipolate tramite il filter pattern, e possono essere associati con i
 dispositivi. Sono, nella pratica, del tutto simili agli stream binari.
 
 Esempi di protocolli che manipolano dati testuali sono il protocollo HTTP, i
@@ -5803,7 +5804,7 @@ public class SimpleUppercaserServer {
 \end{lstlisting}
 
 I \textbf{BufferedReader} e \textbf{BufferedWriter} sono consigliati per i
-dispositivi fisici, in particolare per il protocollo TCP. In questo caso,
+dispositivi fisici, e in particolare per il protocollo TCP. In questo caso,
 useremo i reader ed i writer poiché si tratta di un protocollo che funziona
 mediante caratteri di testo.
 
@@ -5847,7 +5848,7 @@ public class LineClient {
 }
 \end{lstlisting}
 
-\section{A more general example}
+\section{Un esempio più generale}
 
 Il protocollo:
 \begin{itemize}
@@ -5982,7 +5983,7 @@ protected void handleClient(Socket socket) throws IOException {
 Un'altro metodo utile potrebbe essere un \texttt{private void log(String)}, per
 stampare in maniera agevole i log.
 
-Alla riga del printf,
+Alla riga del \texttt{printf},
 
 
 \begin{lstlisting}
@@ -6073,9 +6074,9 @@ consegue), ma non garantisce che un \texttt{write()} di m byte in un endpoint
 corrisponda esattamente ad un \texttt{read()} di m bytes in altri endpoint.
 
 In pratica, $n \geq 1$ \texttt{read} possono essere necessarie per leggere gli
-m byte, in altre parole, le \texttt{read} possono essere in maggior numero.
-L'ultima \texttt{read} potrebbe, ad esempio, includere altri byte oltre agli m.
-di ``messaggio''.
+\texttt{m} byte, in altre parole, le \texttt{read} possono essere in maggior
+numero. L'ultima \texttt{read} potrebbe, ad esempio, includere altri byte oltre
+agli \texttt{m} di ``messaggio''.
 
 Assumendo che \texttt{oBuffer} sia di lunghezza $l$ inferiore a 1024,
 
@@ -6112,7 +6113,7 @@ i possibili risultati:
 \begin{itemize}
     \item n1 = $l_1$, n2 = $l_2$ (fortuna sfacciata!);
     \item n1 $\leq l_1$, n2 $\leq l_2$;
-    \item n1 $> l_1$, n2 $l_2 - (\mathrm{ n1 } - l_1)$.
+    \item n1 $> l_1$, n2 $ = l_2 - (\mathrm{ n1 } - l_1)$.
 \end{itemize}
 
 TCP modella un \emph{flusso di byte}: per questa ragione, abbiamo bisogno di un
@@ -6913,8 +6914,8 @@ public class PreciseWorker extends Worker {
 }
 \end{lstlisting}
 
-Lanciare un'eccezione si fa con lo statement \texttt{throw}. In particolare, lo
-si fa in maniera simile:
+Il lancio di un'eccezione avviene mediante lo statement \texttt{throw}. In
+particolare, lo si fa in maniera simile:
 
 \begin{lstlisting}
 public String getLastName(String fullName) throws MalformedNameException {
@@ -7106,7 +7107,7 @@ Se si invoca \texttt{n==1}, stampa \texttt{en1 n1 n2 f n3 en2 en3}; altrimenti,
 \texttt{n==0} stampa \texttt{en1 n1 f ea en3}.
 
 Lo stato di essere anomalo è \textbf{relativo} rispetto al flusso che ha
-chiamato il flusso atuale -- si possono, perciò, \textbf{annidare} costrutti
+chiamato il flusso attuale -- si possono, perciò, \textbf{annidare} costrutti
 \texttt{try\--catch}:
 
 \begin{lstlisting}
