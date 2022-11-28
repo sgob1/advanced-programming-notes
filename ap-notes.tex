@@ -7510,7 +7510,7 @@ La pratica è generalmente abusata quando si adoperano thread multipli, anche se
 
 Una cosa estremamente importante è che \texttt{run()} non può vedere aumentata
 la clausola \texttt{throws} -- ciascuna eccezione deve essere gestita; la
-tentazione di non farlo è dunque elevatissima.
+tentazione di non farlo sarebbe altrimenti elevatissima.
 
 Se nessun metodo gestisce l'eccezione, ad esempio
 \texttt{NullPointer\-Exception}, il \emph{thread si interrompe}:
@@ -7602,7 +7602,7 @@ esplicitamente:
     \item esplicitamente, se sappiamo che può capitare, la mettiamo nel codice
         -- dunque, l'eccezione va gestita all'interno del metodo che morirebbe
         con un \texttt{try\--catch} con un \texttt{Throwable} per gestire ad
-        esempio \texttt{ArrayIndexOutOf\-BoundsException}.
+        esempio \texttt{ArrayIndex\-Out\-Of\-Bounds\-Exception}.
 \end{itemize}
 
 In ogni caso, in qualche maniera esse vanno gestite anche se il compilatore ci
@@ -7789,8 +7789,10 @@ presenta un'\textbf{interfaccia} \texttt{AutoCloseable}; tutte le classi che
 offrono un metodo \texttt{close()}. Lo sono tutte le classi che gestiscono
 l'input e l'output.
 
+\subsection{Inner classes}
+
 Attenzione -- si possono definire delle \textbf{inner classes}, come ad esempio
-\texttt{Pipe.SinkChannel}, una classe \textbf{public} definita all'interno
+\texttt{Pipe\-.Sink\-Channel}, una classe \textbf{public} definita all'interno
 della classe \texttt{Pipe}. Essa non ha alcun rapporto di ereditarietà con la
 classe in cui è definita -- il legame fra le due è che quest'ultima ha una
 \textbf{funzionalità} essenziale nella classe che definisce.
@@ -8041,11 +8043,11 @@ dettaglio omesso è anche che \textbf{il \texttt{.class} contiene anche le
 signature} di metodi e costruttori. La compilazione statica garantisce che le
 signature vengano rispettate, pena la non riuscita della compilazione. Se la
 verifica dinamica (controllo di consistenza dinamica) fallisce, invece,
-\textbf{viene lanciata un'eccezione}; \texttt{ClassNotFoundException} (una
+\textbf{viene lanciata un'eccezione}; \texttt{Class\-Not\-Found\-Exception} (una
 \texttt{Runtime\-Exception}) se non viene trovato banalmente il \texttt{.class},
-\texttt{NoSuchMetodException} se il metodo o il costruttore non viene trovato
+\texttt{No\-Such\-Metod\-Exception} se il metodo o il costruttore non viene trovato
 nel corrispondente \texttt{.class} (anche qua una \texttt{Runtime\-Exception});
-similmente, se non si trova un field si avrà una \texttt{NoSuchFieldException}.
+similmente, se non si trova un field si avrà una \texttt{No\-Such\-Field\-Exception}.
 
 \subsection{L'autocompilazione}
 
@@ -8221,7 +8223,7 @@ sottointerfaccia) definita altrove.
 L'interfaccia è una superficie che sta al confine fra due spazi, fasi,
 materiali. Nessuno dei due corpi ha bisogno di avere accesso all'interno
 dell'altro -- ciascuno vede l'altro attraverso l'interfaccia. Dal punto di
-vista delle componentei software, se le due parti sono il chiamante ed il
+vista delle componenti software, se le due parti sono il chiamante ed il
 chiamato l'interfaccia sta in mezzo: ciascuno sa i metodi dell'altro, ma
 entrambi sono ignari dei funzionamenti interni dell'altro.
 
@@ -8329,7 +8331,7 @@ public interface MultipleListener extends Listener {
 \end{lstlisting}
 
 La classe che implementa \texttt{MultipleListener} dovrà implementare
-\textbf{sia} \texttt{listen(Event)} \textbf{che} \texttt{listen(Event[])}.
+\textbf{sia} \texttt{listen\-(Event)} \textbf{che} \texttt{listen\-(Event[])}.
 
 Una differenza fra l'ereditarietà fra classi e quella fra interfacce è che
 \textbf{un'interfaccia può ereditare fra più interfacce} -- questo ora è
@@ -8371,8 +8373,8 @@ del software.
 
 Nell'interfaccia vengono definiti i nomi, le funzionalità offerte, come sono
 definite, le loro signature -- nelle classi che \emph{implementano}
-un'interfaccia vengono espresse \emph{come} tali nomi e funzionalità vengano di
-fatto implementate.
+un'interfaccia vengono espressi \emph{il come} tali nomi e funzionalità vengano di
+fatto implementati.
 
 Le interfacce possono godere di ``ereditarietà multipla'' -- dunque, possono
 essere estese due interfacce per volta!
@@ -8402,7 +8404,7 @@ differenze chiave:
 \begin{itemize}
     \item una differenza \emph{concettuale}: le interfacce definiscono
         \emph{cosa}, non \emph{come} -- cosa accadrebbe, ad esempio, se il tipo
-        di ritorno non fosse \texttt{void}, come si realizzarebbe con una
+        di ritorno non fosse \texttt{void}, come si realizzerebbe con una
         classe?
     \item una differenza \emph{concettuale} e \emph{pratica}: non c'è nessuna
         implementazione di default o vuota per le operazioni; praticamente, non
@@ -8476,7 +8478,7 @@ tokenCounterServer.run();
 Abbiamo 1 thread principale, 2 che fanno l'accept, e 2 thread in più per ogni
 client (ad esempio, 2 client sono 7 thread totali).
 
-\subsection{Il modificatore \texttt{abstract}}
+\section{Il modificatore \texttt{abstract}}
 
 La parola chiave \textbf{abstract} viene adoperata per realizzare un modificatore per le definizioni di classi e per le definizioni di metodi. Il modificatore \emph{abstract}:
 \begin{itemize}
@@ -8533,7 +8535,7 @@ public abstract class CountingListener implements Listener {
 \end{lstlisting}
 
 
-In questo caso, voglio definire una cosa astratta, ma non al $100\%$; questa
+In questo caso, voglio definire una cosa astratta, ma non al 100\%; questa
 classe, infatti, ha bisogno di un contatore interno, con alcuni metodi
 definiti. Resta però da definire \texttt{innerListen}.
 
@@ -8544,11 +8546,11 @@ Posso definire uno \texttt{StandardOutputListener} che \emph{estende} \texttt{Co
 Listener listener = new StandardOutputListener();
 \end{lstlisting}
 
-\subsection{Le classi anonime}
+\section{Le classi anonime}
 
-Esiste la possibilità di ridefinire al volo il metodo mancante è data da Java,
+La possibilità di ridefinire al volo il metodo mancante è data da Java,
 mediante le \textbf{classi anonime} -- esse permettono di creare classi
-``on\--th\--fly'',
+``on\--the\--fly'',
 
 \begin{lstlisting}
 public class EventGenerator {
@@ -8583,7 +8585,7 @@ applicato).
 Al runtime, non vi sono differenze: è una classe qualsiasi, \textbf{con un
 nome}, tipicamente della forma \texttt{Main\$1}, con `1' un numero che
 rappresenta la sequenzalità delle definizioni, ad esempio nel caso sopra
-sarebbe \texttt{EventGenerator\$1}.
+sarebbe \texttt{Event\-Ge\-ne\-ra\-tor\$1}.
 
 Con questa sintassi, diventa ancora più semplice l'utilizzo del
 \texttt{LineProcessing\-Server}:
@@ -8629,7 +8631,7 @@ public interface Listener {
     }
   }
   default Listener andThen(final Listener other) { // then is a keyword
-    final Listener thisListener = this;
+    final Listener thisListener = this; // this is shadowed in anonymous class definition
     return new Listener() {
       public void listen(Event event) {
         thisListener.listen(event);
@@ -8703,7 +8705,7 @@ possono usare qualsiasi field}, poiché non sono definiti. Nelle classi
 estendono a ricompilare -- diversamente, nelle interfacce posso aggiungere
 funzionalità che la estendono senza ricompilare (\textbf{retrofitting}).
 
-\subsection{Il tipo \texttt{enum}}
+\section{Il tipo \texttt{enum}}
 
 Il tipo \textbf{enum} è un tipo che rappresenta un insieme di valori
 \textbf{predefinito dallo sviluppatore}. Un'istanza di \texttt{enum}
@@ -8767,7 +8769,7 @@ dove non è necessario specificare \texttt{Gender.MALE} ed è sufficiente
 specificare \texttt{MALE}.
 
 I tipi \texttt{enum} possono avere metodi, field, costruttori -- tuttavia, i
-costruttori devono poter essere chiamati con i valori che li definiscono,
+costruttori devono essere chiamati con i valori che li definiscono,
 
 \begin{lstlisting}
 public enum Gender {
@@ -8797,12 +8799,12 @@ del \texttt{Gender}, ad esempio il codice cambierà fra \texttt{MALE},
 Gli \texttt{enum} non si possono estendere, tuttavia estendono (forse)
 interfacce.
 
-\subsection{Le Annotazioni}
+\section{Le Annotazioni}
 
 Le \textbf{annotazioni} sono \emph{annotazioni}. Hanno una loro sintassi che
 serve per \emph{annotare} definizioni di classi, metodi e field, oltre che ad
 altre cose. Possono avere \emph{argomenti}, possono essere definite e possono
-essere oservabili, mantenute e percepite
+essere osservabili, mantenute e percepite
 \begin{itemize}
     \item a tempo di compilazione;
     \item al runtime;
@@ -8931,10 +8933,7 @@ CommandProcessor p = (input) -> {
 se c'è un solo argomento, posso omettere le parentesi tonde:
 
 \begin{lstlisting}
-
 CommandProcessor p = input -> {return input.toUpperCase()};
-If the body is composed by exactly one statement (possibly return), brackets {} can be omitted (with return, if present):
-
 \end{lstlisting}
 
 infine, se c'è un singolo statement, posso rimuovere il return e le parentesi graffe,
@@ -9024,22 +9023,22 @@ double max = RealFunctionUtils.max(f
     .composeWith(x -> x * x + 1));
 \end{lstlisting}
 
-Le funzioni lambda sono \emph{oggetti di primaria importanza}, diversamente dai
-metodi, che non hanno dignità primaria, ed esistono solo in qualità di azioni
+Le funzioni lambda sono \textbf{oggetti di primaria importanza}, diversamente dai
+metodi, che non hanno dignità primaria poiché esistono solo in qualità di azioni
 che un determinato oggetto può compiere. Gli oggetti modellano entità, mentre
 le funzioni lambda modellano \emph{step di processamento}. Il modo di
-programmare che ruota attorno alle funzione è detto chiamarsi
+programmare che ruota attorno alle funzioni lambda è detto chiamarsi
 \textbf{functional programming}. Per rendere attrattivo Java come opzioni di
 programmazione, è stato deciso di aggiungere l'opzione delle lambda functions,
-le quali hanno anche il pregio di ridurre la verbosità del codice. Nel
+le quali hanno oltretutto il pregio di ridurre la verbosità del codice. Nel
 pacchetto\texttt{java.util.stream} è presente un grande utilizzo delle funzioni
 lambda.
 
 \chapter{I Generics in Java}
 
-I \textbf{Generics} sono l'ultima innovazione della sintassi del linguaggio,
-che consente di gestire le \emph{collezioni}. Molto spesso abbiamo a che fare
-con \emph{tipi} (classi) che sono \emph{costruiti su altri tipi}. In
+I \textbf{Generics} sono l'ultima profonda innovazione della sintassi del
+linguaggio, che consente di gestire le \emph{collezioni}. Molto spesso abbiamo
+a che fare con \emph{tipi} (classi) che sono \emph{costruiti su altri tipi}. In
 particolare, supponiamo di voler creare una classe che modella un \emph{insieme
 di stringhe}, che consenta oltretutto di aggiungere una stringa all'insieme,
 verificarne la presenza nell'insieme e contare il numero delle stringhe
@@ -9257,7 +9256,9 @@ non compare \texttt{T[]} e c'è \texttt{Object[]} poiché non possiamo definire
 generici oggetti, al runtime sono il tipo che deve essere. Tuttavia, ciò non è
 visibile da fuori (modularità del software, information hiding).
 
-Voglimo modellare il generico concetto di funzione da A a B. Una \textbf{functional interface} può essere modellata in questo modo, 
+Voglimo modellare il generico concetto di funzione da A a B. Una
+\textbf{functional interface} per il concetto di \emph{funzione matematica da A
+a B} può essere modellata in questo modo, 
 
 \begin{lstlisting}
 @FunctionalInterface
@@ -9311,7 +9312,7 @@ public interface Function<A, B> {
 \end{lstlisting}
 
 e \texttt{C} è visibile esclusivamente all'interno della signature e del body
-di \texttt{composeWith}, mentre \texttt{A} e \texttt{B} sono visibili dovunque
+di \texttt{compose\-With}, mentre \texttt{A} e \texttt{B} sono visibili dovunque
 all'interno dell'interfaccia d'esempio. Un possibile utilizzo,
 
 \begin{lstlisting}
@@ -10575,7 +10576,7 @@ Gli stream sono utilizzati mediante 3 fasi:
 Ad esempio, si può ottenere uno stream, 
 \begin{itemize}
     \item da \texttt{Collection<T>}, invocando \texttt{Stream<T> stream()} o
-        \texttt{Stream<T> parallelStream()}, con l'ultimo che ove possibile
+        \texttt{Stream<T> pa\-ral\-lel\-Stream()}, con l'ultimo che ove possibile
         effettua le operazioni in parallelo;
     \item da un array, con \texttt{Stream<T> Arrays.stream(T[])};
     \item da altri tipi:
