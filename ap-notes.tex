@@ -86,6 +86,10 @@
 
 \setlength{\columnsep}{42pt}
 
+\let\oldtextsc\textsc
+\renewcommand{\textsc}[1]{\oldtextsc{\scfontfs #1}}
+
+
 %\theoremstyle{theorem}
 \newtheorem{thm}{Teorema}
 \setlength{\tabcolsep}{0.5em} % for the horizontal padding
@@ -152,7 +156,7 @@ Le ragioni per adoperare Java sono molteplici,
         piattaforma intermedia che è sita fra hardware e software \-- la
         \textbf{Java Virtual Machine};
 	\item il supporto della community è solido e competente;
-	\item strumenti come gli IDE sono molto versatili e funzionali;
+	\item strumenti come gli \textsc{IDE} sono molto versatili e funzionali;
 	\item vi sono tante librerie API disponibili;
 	\item è molto anziano e solido; molti pattern di programmazione sono stati
 		creati in Java;
@@ -210,7 +214,7 @@ Importanti strumenti sono:
         I JDK Sono caratterizzati da venditore, piattaforma, versione, OS e
         architettura;
 	\item API documentation (chiamata \textbf{javadoc});
-	\item Integrated Development Environment (IDE);
+	\item Integrated Development Environment (\textsc{IDE});
 \end{itemize}
 
 Il JDK deve tenere conto dell'architettura dell'host: in particolare, il motore
@@ -327,13 +331,13 @@ eseguibili \texttt{javac} e \texttt{java}, alcune classi precompilate
 \texttt{.class} di libreria, e altri strumenti utili allo sviluppo. Non
 contiene, tuttavia, i codici sorgenti delle librerie precompilate, e non
 contiene documentazione \--- ambedue devono pertanto essere scaricati
-separatamente, e il download può avvenire sia tramite IDE o simili strumenti
+separatamente, e il download può avvenire sia tramite \textsc{IDE} o simili strumenti
 che manualmente.
 
 La documentazione e il codice sorgente servono entrambi (specialmente la
-documentazione). La documentazione è reperibile online, oppure attraverso IDE o
+documentazione). La documentazione è reperibile online, oppure attraverso \textsc{IDE} o
 javadoc. Il codice sorgente è reperibile comunque online, oppure attraverso
-l'IDE.
+l'\textsc{IDE}.
 
 In Java, una volta terminato lo sviluppo di un programma, ci sono due fasi:
 \begin{enumerate}
@@ -693,7 +697,7 @@ In questo caso non è importante l'ordine e non ci devono essere duplicati \---
 dunque, trattasi di un insieme di metodi di una classe. Questa capacità di
 avere un insieme di metodi è detta \textbf{method overloading}. Per discernere
 i vari metodi è opportuno adoperare la documentazione (javadoc), ed utilizzare in
-maniera efficiente l'IDE mediante autocompletamento. Solitamente, già nel nome
+maniera efficiente l'\textsc{IDE} mediante autocompletamento. Solitamente, già nel nome
 è insito che cosa faccia il metodo, tenendo anche conto delle \textbf{naming
 conventions}.
 
@@ -1216,7 +1220,7 @@ public class Complex {
 
 nel caso di sopra è necessario adoperare l'identificatore \texttt{this}.
 Solitamente, questo caso si presenta esclusivamente all'interno di costruttori
-`di routine', che spesso sono automaticamente generabili da degli IDE.
+`di routine', che spesso sono automaticamente generabili da degli \textsc{IDE}.
 
 
 \subsection{Il diagramma oggetti-riferimenti per una classe con field}
@@ -1395,7 +1399,7 @@ più agevole la scrittura del codice.}. Con \texttt{import}, dichiaro l'uso
 dell'abbreviazione con il solo nome della classe, proveniente dal pacchetto
 indicato. La sintassi prevede anche l'uso dell'asterisco per riferirsi a classi
 multiple dello stesso pacchetto (\emph{star import}) \--- al giorno d'oggi si
-evita di utilizzarlo, poiché è l'IDE a creare, in automatico, gli import
+evita di utilizzarlo, poiché è l'\textsc{IDE} a creare, in automatico, gli import
 necessari al momento della scrittura del codice, e non è più richiesto
 necessariamente l'intervento umano per ogni importazione. Il Fully Qualified
 Name è, a volte, necessario nel caso di due \emph{classi omonime}, appartenenti
@@ -4447,7 +4451,7 @@ l'autounboxing dei numeri di sopra, e vengono paragonati i valori \texttt{301
 == 301}, che forniscono il risultato \texttt{true}.
 
 È meglio adoperare il metodo \texttt{equals()} quando vi è da fare un paragone
-(l'IDE lo evidenzia).
+(l'\textsc{IDE} lo evidenzia).
 
 \section{Riassunto del capitolo}
 
@@ -6193,7 +6197,7 @@ There are two ways to create a new thread of execution. One is to declare a clas
 Vi sono due modi per creare un flusso d'esecuzione: il primo, è quello di
 creare una classe \texttt{T} che \emph{estende} \texttt{Thread} e fa l'override
 di \texttt{run()}, ed invocare \texttt{T.start()} che a sua volta invocherà
-\texttt{run()}, il secondo non verrà visto. Il punto dove il flusso
+\texttt{run()}, il secondo verrà visto in seguito. Il punto dove il flusso
 d'esecuzione del thread viene fatto partire è alla chiamata del metodo
 \texttt{start()}.
 
@@ -6979,7 +6983,7 @@ public void showName(String fullName) throws MalformedNameException {
 }
 \end{lstlisting}
 
-Compila, però l'IDE tipicamente ci avverte che il codice, di fatto, non lancia
+Compila, però l'\textsc{IDE} tipicamente ci avverte che il codice, di fatto, non lancia
 mai \texttt{MalformedNameException}. Altro,
 
 \begin{lstlisting}
@@ -6992,7 +6996,7 @@ public void showName(String fullName) throws Exception, MalformedNameException {
 }
 \end{lstlisting}
 
-il compilatore compila, però l'IDE ci avvisa che
+il compilatore compila, però l'\textsc{IDE} ci avvisa che
 \texttt{MalformedNameException} è già rappresentata da \texttt{Exception},
 dunque non è necessaria.
 
@@ -8088,7 +8092,7 @@ impacchettare (uno dei tanti passi del processo di \textbf{build}):
         software che stiamo costruendo).
 \end{itemize}
 
-Dunque, il processo di \textbf{build} viene gestito o dall'IDE o da tool detti
+Dunque, il processo di \textbf{build} viene gestito o dall'\textsc{IDE} o da tool detti
 \textbf{build--automation tools}, ad esempio \emph{Maven} e \emph{Gradle} --
 essi sono in grado di \textbf{gestire le dipendenze} automaticamente.
 
@@ -8136,7 +8140,7 @@ opportunamente aggiornata con le modifiche del codice.
 La javadoc è scritta con una sintassi opportuna \textbf{direttamente
 all'interno dei } \texttt{.java}. L'API documentation viene automaticamente
 generata a partire dai sorgenti, mediante \texttt{javadoc} -- verranno creati
-un insieme di documenti web, spesso tramite l'aiuto dell'IDE.
+un insieme di documenti web, spesso tramite l'aiuto dell'\textsc{IDE}.
 
 Un esempio del formato javadoc è il seguente:
 
@@ -9334,8 +9338,9 @@ set.add(3.14); //autoboxing
 set.add(new Object());
 \end{lstlisting}
 
-anche se può portare a problemi -- il compilatore (o l'IDE) ci avvisa (la
-tipizzazione forte responsabilizza lo sviluppatore in fase di compilazione).
+anche se può portare a problemi -- il compilatore (o l'\textsc{IDE}) ci avvisa (la
+tipizzazione forte responsabilizza lo sviluppatore in fase di compilazione). Il
+codice di cui sopra è del tutto equivalente al seguente,
 
 \begin{lstlisting}
 Set<Object> set = new Set<>();
@@ -9390,7 +9395,7 @@ public class StringContainer implements Container<String> {
 
 ed il placeholder \texttt{<T>} è stato \textbf{valorizzato} in \texttt{String}.
 
-La relazione ereditaria fra tipi non generici non è sempre semplice:
+La relazione ereditaria fra tipi generici non è sempre semplice:
 
 \begin{lstlisting}
 // Assume:
@@ -9473,24 +9478,26 @@ tramite la \emph{separation of concerns}.
 
 Il primo caso è quello della \texttt{interface Function<T,R>}, 
 \begin{quote}
-    \footnotesize{Module java.base
-Package java.util.function
-Interface Function<T,R>
+    \footnotesize{Module \texttt{java.base}
+    Package \texttt{java.util.function}
+    Interface \texttt{Function<T,R>}
 
 Type Parameters:
-T - the type of the input to the function
-R - the type of the result of the function
+
+    \texttt{T} - the type of the input to the function
+
+    \texttt{R} - the type of the result of the function
 
 All Known Subinterfaces:
-UnaryOperator<T>
+    \texttt{UnaryOperator<T>}
 
 Functional Interface:
 This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.
 
-@FunctionalInterface
-public interface Function<T,R>
+    \texttt{@FunctionalInterface
+    public interface Function<T,R>}
 Represents a function that accepts one argument and produces a result.
-This is a functional interface whose functional method is apply(Object).
+    This is a functional interface whose functional method is \texttt{apply(Object)}.
 
 Since:
 1.8
@@ -9499,7 +9506,7 @@ Since:
 
 Si guardino i metodi nella documentazione ufficiale. Ad esempio,
 \begin{quote}
-    \footnotesize{default <V> Function<T,V>	andThen(Function<? super R,? extends V> after)	
+    \footnotesize{\texttt{default <V> Function<T,V>	andThen(Function<? super R,? extends V> after)}
 Returns a composed function that first applies this function to its input, and then applies the after function to the result.}
 \end{quote}
 
@@ -9515,39 +9522,39 @@ Function for the case where the operand and result are of the same type.}
 L'altro caso è l'interfaccia \texttt{Comparable<T>}. Dalla documentazione
 (importante),
 \begin{quote}
-    \footnotesize{Module java.base
-Package java.lang
-Interface Comparable<T>
+    \footnotesize{Module \texttt{java.base}
+    Package \texttt{java.lang}
+    Interface \emph{Comparable<T>}
 
-public interface Comparable<T>
-This interface imposes a total ordering on the objects of each class that implements it. This ordering is referred to as the class's natural ordering, and the class's compareTo method is referred to as its natural comparison method.
-Lists (and arrays) of objects that implement this interface can be sorted automatically by Collections.sort (and Arrays.sort). Objects that implement this interface can be used as keys in a sorted map or as elements in a sorted set, without the need to specify a comparator.
+    \texttt{public interface Comparable<T>}
+    This interface imposes a total ordering on the objects of each class that implements it. This ordering is referred to as the class's natural ordering, and the class's \texttt{compareTo} method is referred to as its natural comparison method.
 
-The natural ordering for a class C is said to be consistent with equals if and only if e1.compareTo(e2) == 0 has the same boolean value as e1.equals(e2) for every e1 and e2 of class C. Note that null is not an instance of any class, and e.compareTo(null) should throw a NullPointerException even though e.equals(null) returns false.
+    Lists (and arrays) of objects that implement this interface can be sorted automatically by \texttt{Collections.sort} (and \texttt{Arrays.sort}). Objects that implement this interface can be used as keys in a sorted map or as elements in a sorted set, without the need to specify a comparator.
 
-It is strongly recommended (though not required) that natural orderings be consistent with equals. This is so because sorted sets (and sorted maps) without explicit comparators behave "strangely" when they are used with elements (or keys) whose natural ordering is inconsistent with equals. In particular, such a sorted set (or sorted map) violates the general contract for set (or map), which is defined in terms of the equals method.
+    The natural ordering for a class \texttt{C} is said to be consistent with equals if and only if \texttt{e1.compareTo(e2) == 0} has the same boolean value as \texttt{e1.equals(e2)} for every \texttt{e1} and \texttt{e2} of class \texttt{C}. Note that \texttt{null} is not an instance of any class, and \texttt{e.compareTo(null)} should throw a \texttt{NullPointerException} even though \texttt{e.equals(null)} returns \texttt{false}.
 
-For example, if one adds two keys a and b such that (!a.equals(b) \&\& a.compareTo(b) == 0) to a sorted set that does not use an explicit comparator, the second add operation returns false (and the size of the sorted set does not increase) because a and b are equivalent from the sorted set's perspective.
+    It is strongly recommended (though not required) that natural orderings be consistent with \texttt{equals}. This is so because sorted sets (and sorted maps) without explicit comparators behave "strangely" when they are used with elements (or keys) whose natural ordering is inconsistent with \texttt{equals}. In particular, such a sorted set (or sorted map) violates the general contract for set (or map), which is defined in terms of the \texttt{equals} method.
 
-Virtually all Java core classes that implement Comparable have natural orderings that are consistent with equals. One exception is java.math.BigDecimal, whose natural ordering equates BigDecimal objects with equal values and different precisions (such as 4.0 and 4.00).
+    For example, if one adds two keys \texttt{a} and \texttt{b} such that \texttt{(!a.equals(b) \&\& a.compareTo(b) == 0)} to a sorted set that does not use an explicit comparator, the second \texttt{add} operation returns \texttt{false} (and the size of the sorted set does not increase) because \texttt{a} and \texttt{b} are equivalent from the sorted set's perspective.
 
-For the mathematically inclined, the relation that defines the natural ordering on a given class C is:
+    Virtually all Java core classes that implement \texttt{Comparable} have natural orderings that are consistent with \texttt{equals}. One exception is \texttt{java.math.BigDecimal}, whose natural ordering equates \texttt{BigDecimal} objects with equal values and different precisions (such as \texttt{4.0} and \texttt{4.00}).
 
+    For the mathematically inclined, the relation that defines the natural ordering on a given class \texttt{C} is:
 
-       (x, y) such that x.compareTo(y) <= 0.
+\texttt{     (x, y) such that x.compareTo(y) <= 0.}
  
 The quotient for this total order is:
 
-       (x, y) such that x.compareTo(y) == 0.
+\texttt{     (x, y) such that x.compareTo(y) == 0.}
  
-It follows immediately from the contract for compareTo that the quotient is an equivalence relation on C, and that the natural ordering is a total order on C. When we say that a class's natural ordering is consistent with equals, we mean that the quotient for the natural ordering is the equivalence relation defined by the class's equals(Object) method:
-     (x, y) such that x.equals(y). 
+    It follows immediately from the contract for \texttt{compareTo} that the quotient is an \emph{equivalence relation} on \texttt{C}, and that the natural ordering is a \emph{total order} on \texttt{C}. When we say that a class's natural ordering is consistent with \texttt{equals}, we mean that the quotient for the natural ordering is the equivalence relation defined by the class's \texttt{equals(Object)} method:
+
+\texttt{     (x, y) such that x.equals(y).}
+
 This interface is a member of the Java Collections Framework.
 
 Since:
 1.2
-See Also:
-Comparator
 }
 \end{quote}
 
@@ -9560,11 +9567,17 @@ connettività:
 
 \begin{itemize}
     \item $a \leq b \wedge b \leq a \Rightarrow a = b$ (antisimmetria);
-    \item $a \leq b \wedge b \leq c \Rightarrow a \leq b$ (transitività);
+    \item $a \leq b \wedge b \leq c \Rightarrow a \leq c$ (transitività);
     \item $a \leq b \vee b \leq a \Rightarrow a = b$ (connettività);
 \end{itemize}
 
-dunque, l'output del metodo di \texttt{interface Comparable<T>}, è TODO 593
+dunque, il risultato dell'invocazione del metodo \texttt{int compareTo(other)} di \texttt{interface Comparable<T>}, deve essere:
+\begin{itemize}
+    \item inferiore a 0 se \texttt{this} precede \texttt{other};
+    \item superiore a 0 se \texttt{this} segue \texttt{other};
+    \item 0 altrimenti.
+\end{itemize}
+
 
 Esiste un'interfaccia \texttt{Comparator<T>} che è simile a
 \texttt{Comparable<T>}, ma che utilizza una comparazione ``naturale''
@@ -9575,7 +9588,11 @@ comparare oggetti che non implementano \texttt{Comparable}. Esso è anche dotato
 di molti metodi \texttt{default} utili. Si legga la documentazione nella slide
 595 o su internet.
 
-Definiamo l'ordinamento naturale per delle persone, in base al cognome. Dunque, facciamo implementare \texttt{Comparable<Person>} a \texttt{Person}:
+Definiamo l'\textbf{ordinamento naturale} per delle persone, in base al
+cognome. L'ordinamento naturale di una classe deve è definito tramite
+l'implementazione di \texttt{Comparable<T>} ed è descritto dal metodo
+\texttt{compareTo}. Dunque, facciamo implementare \texttt{Comparable<Person>} a
+\texttt{Person}:
 
 \begin{lstlisting}
 public class Person implements Comparable<Person> {
@@ -9626,10 +9643,11 @@ Le interfacce principali sono le seguenti, \texttt{interface Collection<E>} per
 le \textbf{collezioni} e \texttt{interface Map<K,V>} per le \textbf{mappe}. Le
 \texttt{Collection<E>} sono una collezione che rappresenta un gruppo di
 oggetti, nota per i suoi elementi. Dunque, \texttt{E} sta per
-\textbf{elementi}. Una mappa invece è un oggetto che mappa chiavi a valori. Una
-mappa non può contenere chiavi duplicate -- ciascuna chiave può mappare al più
-un singolo valore. Dunque, \texttt{K} sta per \textbf{chiave}, \texttt{V} sta
-per \textbf{valore}. Questa mappa è generalmente chiamata \textbf{dizionario}.
+\textbf{elementi}. Una mappa invece è un oggetto che mappa chiavi \texttt{K} a
+valori \texttt{V}. Una mappa non può contenere chiavi duplicate -- ciascuna
+chiave può mappare al più un singolo valore. Dunque, \texttt{K} sta per
+\textbf{chiave}, \texttt{V} sta per \textbf{valore}. Questa mappa è
+generalmente chiamata \textbf{dizionario}.
 
 Le collezioni e le mappe sono disgiunte rispetto all'ereditarietà, e
 \texttt{Map} non è precisamente una collezione (ciononostante, è parte della
@@ -9674,6 +9692,7 @@ eseguire operazioni su più elementi contemporaneamente:
 Alcuni metodi ``derivati'' (ma ridefiniti) sono
 \begin{quote}
     \footnotesize{\texttt{void	clear()}	Removes all of the elements from this collection (optional operation).
+
 \texttt{boolean	isEmpty()}	Returns true if this collection contains no elements.}
 \end{quote}
 
@@ -9689,7 +9708,11 @@ Una collection può essere convertita in array, dunque
 \texttt{toArray()} restituisce un array di oggetti \texttt{Object[]}, non
 \texttt{T[]}, perché non si può fare! Al giorno d'oggi si usa il secondo
 metodo, che fa uso di una funzione che genera un array di \texttt{T[]} (tramite
-construction reference di array). TODO 607-608
+construction reference di array). Il terzo metodo, invece, può essere usato, ma
+richiede la creazione di un array di \texttt{T[]} esternamente, di modo che
+possa essere fornito al metodo stesso.
+
+\section{Iterazione sulle Collections}
 
 Ci sono 4 modi per iterare su una collezione:
 \begin{enumerate}
@@ -9698,7 +9721,7 @@ Ci sono 4 modi per iterare su una collezione:
         lista;
     \item tramite un \texttt{for-each} (se non serve l'indice) -- la maniera
         corretta e attuale per farlo;
-    \item tramite gli \emph{stream}.
+    \item tramite gli \emph{stream} (ultimo capitolo).
 \end{enumerate}
 
 Supponiamo di avere una \texttt{Collection<Person>},
@@ -9769,7 +9792,8 @@ for (Person person : persons) {
 }
 \end{lstlisting}
 
-e il compilatore lo traduce nella maniera con l'\texttt{iterator()}.
+e il compilatore lo traduce come se fosse implementato con
+l'\texttt{iterator()}.
 
 Importante: non bisogna \textbf{mai} assumere che, iterando su una collezione,
 il risultato abbia uno specifico ordine -- nemmeno che l'ordine uscito sia
@@ -9788,6 +9812,8 @@ for (String string : strings) {
 
 potrebbe risultare in \texttt{hi}, \texttt{world}, oppure in \texttt{world},
 \texttt{hi}.
+
+\section{Le collezioni}
 
 Finora abbiamo \texttt{Collection<E>} che eredita da \texttt{Iterable<E>}. Ora
 vediamo un'altra estensione di \texttt{Collection<E>},
@@ -9956,6 +9982,8 @@ knownJavaThings.remove(3);
 System.out.println(knownJavaThings.get(3));
 \end{lstlisting}
 
+\section{Le mappe}
+
 Vediamo ora \texttt{Map<K,V>},
 \begin{quote}
     \footnotesize{\texttt{interface Map<K,V>}
@@ -9974,10 +10002,10 @@ valori}. Perciò, fornisce una \textbf{vista} di chiavi con i loro rispettivi
 con un for\--each. Le \texttt{Map<K,V>} modellano una funzione che va da
 \texttt{K} a \texttt{V} con in più il valore nullo (somiglia alla
 \texttt{Function<K,V>} -- solo che una \texttt{Map<K,V>} modella un insieme di
-chiavi, è presente il concetto di ``essere dentro'', mentre le
+chiavi, è presente il concetto di ``essere dentro'', ``appartenere'' mentre le
 \texttt{Function} modellano un processo).
 
-Dunque, alcuni metodi chiave,
+Dunque, alcuni metodi fondamentali,
 \begin{quote}
     \footnotesize{\texttt{V 	get(Object key)} 	Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
 
@@ -9999,8 +10027,9 @@ Dunque, alcuni metodi chiave,
 \end{quote}
 
 dove \emph{optional operation} significa che per implementazioni ``sola
-lettura'' non è necessario implementare il metodo (bisogna fare \texttt{throw
-new UnsupportedOperationException()}).
+lettura'' non è necessario implementare il metodo (nel caso in cui si voglia
+implementare una mappa immutabile, per i metodi opzionali bisogna fare
+\texttt{throw new Unsupported\-Operation\-Exception()}).
 
 Esistono delle \textbf{viste} su una mappa:
 \begin{quote}
@@ -10083,7 +10112,7 @@ A Queue that additionally supports operations that wait for the queue to become 
 
 Esistono alcune implementazioni interessanti di tutto ciò, ad esempio
 \begin{itemize}
-    \item Set $\rightarrow$ HashSet, LinkedHashSet, EnumSet -- nessuna delle 3
+    \item \texttt{Set} $\rightarrow$ \texttt{HashSet}, \texttt{LinkedHashSet}, \texttt{EnumSet} -- nessuna delle 3
         è thread\--safe; \texttt{HashSet} è quella ``di base'', internamente è
         implementata con gli hash; \texttt{LinkedHashSet} è ottimizzata per le
         modifiche, e fornisce la garanzia di \textbf{mantenere l'ordine di
@@ -10091,18 +10120,20 @@ Esistono alcune implementazioni interessanti di tutto ciò, ad esempio
         \texttt{EnumSet} fa sì che gli elementi siano tipi \emph{enum}, cioè
         ottimizzando le performance poiché i possibili valori sono noti a
         priori;
-    \item SortedSet $\rightarrow$ TreeSet;
-    \item List $\rightarrow$ ArrayList, LinkedList -- esse non forniscono
+    \item \texttt{SortedSet} $\rightarrow$ \texttt{TreeSet};
+    \item \texttt{List} $\rightarrow$ \texttt{ArrayList}, \texttt{LinkedList} -- esse non forniscono
         garanzie aggiuntive, né sono thread\--safe; \texttt{ArrayList}
         implementa mediante un array, e benché sia tutto ottimizzato,
-        iterazione e copia sono velocissimi, modifica invece non è rapida;
+        iterazione e copia sono velocissime, modifica invece non è rapida;
         \texttt{LinkedList} è diversa, la modifica è molto veloce, l'iterazione
         è più lenta;
-    \item Map $\rightarrow$ HashMap, LinkedHashMap, EnumMap -- similmente per i
+    \item \texttt{Map} $\rightarrow$ \texttt{HashMap}, \texttt{LinkedHashMap}, \texttt{EnumMap} -- similmente per i
         \texttt{Set}, abbiamo equivalenze sull'implementazione, dunque valgono
         le cose dette sopra;
-    \item SortedMap $\rightarrow$ TreeMap;
+    \item \texttt{SortedMap} $\rightarrow$ \texttt{TreeMap}.
 \end{itemize}
+
+Risulta evidente che la scelta della specifica implementazione andrà fatta a seconda del tipo di operazioni che si intendono svolgere nel proprio programma.
 
 Le implementazioni differiscono per 3 aspetti:
 \begin{enumerate}
@@ -10143,8 +10174,8 @@ Il valore di \texttt{hashCode()} non dovrebbe cambiare a meno che non cambi lo
 \texttt{hashCode()} deve fornire lo stesso hash -- \textbf{non} è richiesto
 tuttavia che il \emph{distillato} sia diverso dall'altro per due oggetti
 qualora \texttt{equals()} restituirebbe \texttt{false} per essi. Una buona
-implementazione di \texttt{hashCode()} è generalmente fornita dall'IDE
-(parimenti per \texttt{equals()}.
+implementazione di \texttt{hashCode()} è generalmente fornita dall'\textsc{IDE}
+(parimenti per \texttt{equals()}).
 
 Tutte le implementazioni hanno un costruttore di default, per collezioni o
 mappe vuote. Dunque,
@@ -10180,11 +10211,13 @@ per i motivi già citati. Esistono dei metodi \emph{constructor\--like} che sono
 \texttt{static} e producono \textbf{collezioni immutabili}:
 \begin{quote}
     \footnotesize{Set:
+
 \texttt{static <E> Set<E> 	of()} 	Returns an unmodifiable set containing zero elements.
 
 \texttt{static <E> Set<E> 	of(E... elements)} 	Returns an unmodifiable set containing an arbitrary number of elements.
 
 List:
+
 \texttt{static <E> List<E> 	of()} 	Returns an unmodifiable list containing zero elements.
 
 \texttt{static <E> List<E> 	of(E... elements)} 	Returns an unmodifiable list containing an arbitrary number of elements.}
@@ -10219,11 +10252,14 @@ collezioni esistenti, e lo fanno come wrapper in blocchi \texttt{syncrhonized}. 
 \end{itemize}
 
 Attenzione però: la thread\--safety è garantita \textbf{solo sulla view}, non
-su ciascun elemento!
+su ciascun elemento! Questo significa che ad essere \texttt{syncrhonized} è --
+ad esempio -- la lista, e non i singoli elementi (una lista di \texttt{Things}
+sincronizzata non rende \texttt{syncrhonized} gli oggetti di tipo
+\texttt{Things} in essa contenuti).
 
-TODO 638 documentazione \texttt{Collections}
-
-TODO 639 schema complessivo
+Si guardi la documentazione delle Java \texttt{Collections}\footnote{https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html}\footnote{https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html}, e lo schema
+complessivo al link a pié di
+pagina\footnote{https://www.ictdemy.com/java/collections-and-streams-in-java/java-collections-framework}.
 
 \section{Esempio d'esercizio}
 
@@ -10286,7 +10322,7 @@ Foundation.
 Gli \textbf{executors} modellano la capacità di una componente di eseguire
 qualcosa -- ad esempio task, job, e così via. Molto spesso si intende
 semplificare la gestione al runtime e lo sviluppo di task paralleli. Il
-parallelismo può essere eseguito grazie a \texttt{tread()} e similari -- si ha
+parallelismo può essere eseguito grazie a \texttt{thread()} e similari -- si ha
 spesso però la necessità di gestire il tutto \emph{più ad alto livello}, senza
 entrare nei dettagli come con \texttt{start()}. Si individuano due concetti
 chiave:
@@ -10458,7 +10494,7 @@ Nella fattispecie:
     \item \texttt{ScheduledExecutorService} invece aggiunge metodi per
         l'esecuzione schedulata, ad esempio \texttt{schedule(Callable<V>
         callable, long delay, TimeUnit unit)} e
-        \texttt{scheduleAtFixedRate(Runnable command, long initialDelay, long
+        \texttt{scheduleAtFixedRate(Runnable command, long i\-ni\-tial\-De\-lay, long
         period, TimeUnit unit)}.
 \end{itemize}
 
@@ -10581,7 +10617,7 @@ Ad esempio, si può ottenere uno stream,
     \item da un array, con \texttt{Stream<T> Arrays.stream(T[])};
     \item da altri tipi:
 \begin{itemize}
-    \item \texttt{Stream <String> lines()} in \texttt{BufferedReader};
+    \item \texttt{Stream<String> lines()} in \texttt{BufferedReader};
     \item \texttt{Stream<String> splitAsStream(CharSequence input)} in
         \texttt{Pattern}.
 \end{itemize}
@@ -10625,6 +10661,8 @@ Per quanto riguarda le operazioni terminali,
 e altre operazioni, tipo \texttt{average()}, \texttt{min()}, \texttt{max()}
 negli stream di numeri.
 
+\begin{quote}
+    \footnotesize{
 ``interface BinaryOperator<T> extends BiFunction<T,T,T> is a @FunctionalInterface with no further methods
     interface BiFunction<T,U,R> is a @FunctionalInterface with a method R apply(T, U)''
 
@@ -10632,6 +10670,7 @@ Alcuni esempi:
 
 ``Given a collection of person names (first+last), get the initials
 corresponding to names with more than 2 words in the names.''
+}\end{quote}
 
 \begin{lstlisting}
 Collection<String> names = List.of(
