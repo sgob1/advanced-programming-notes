@@ -1308,15 +1308,7 @@ tolgono i field) o delle strutture dati (se si rimuovono i metodi).
 
 \chapter{I pacchetti (packages)} 
 
-Un certo identificatore può essere accessibile (utilizzabile), oppure
-no \--- nel caso dell'identificatore \texttt{private}, il metodo o field non è
-accessibile al di fuori dall'oggetto. Nel caso di metodi o campi denotati con
-identificatore \texttt{public}, il file \texttt{.class} vede esportati dal
-compilatore \emph{gli identificatori delle classi, dei metodi e dei field di
-tale classe}. L'esportazione comprende sia i modificatori d'accesso private e
-public, con private inaccessibili dall'esterno (il compilatore ci avvisa
-gentilmente di ciò). Di default, il comportamento è quello di un modificatore
-d'accesso \texttt{public}:
+Un certo identificatore può essere accessibile (utilizzabile), oppure no \--- nel caso dell'identificatore \texttt{private}, il metodo o field non è accessibile al di fuori dall'oggetto. Nel caso di metodi o campi denotati con identificatore \texttt{public}, il file \texttt{.class} vede esportati dal compilatore \emph{gli identificatori delle classi, dei metodi e dei field di tale classe}. L'esportazione comprende sia i modificatori d'accesso private e public, con private inaccessibili dall'esterno (il compilatore ci avvisa gentilmente di ciò). Di default, il comportamento è quello di un modificatore d'accesso \texttt{public}, con visibilità esclusivamente all'interno del \emph{pacchetto} (a breve verrà illustrato tale concetto in dettaglio):
 
 \begin{itemize}
     \item \texttt{private}: non visibile, c'è ma non si può usare;
@@ -1325,45 +1317,15 @@ d'accesso \texttt{public}:
         pacchetto).
 \end{itemize}
 
-I \textbf{pacchetti (packages)} sono un \emph{insieme} di classi con un nome.
-All'interno di un package, il modificatore di accesso di default rende visibile
-tale identificatore \emph{soltanto all'interno del pacchetto}. Gli
-identificatori di default, benché abbiano un comportamento peculiare
-all'interno del pacchetto, sono molto rari e tendono a sfavorire la modularità,
-poiché non hanno un comportamento modulare corretto. Infatti, gli
-identificatori di default si trovano ad essere una sorta di ``via di mezzo''
-fra l'identificatore \texttt{private} e l'identificatore \texttt{public}: in
-questa maniera, tendono a non avere un comportamento netto e ben definito.
-Il nome di un pacchetto, dal punto di vista sintattico, è una sequenza di
-lettere (token) separata da punti. Non c'è una gerarchia formale, sebbene i
-nomi di pacchetti possano suggerire diversamente, per esempio osservando la
-somiglianza fra i nomi di pacchetti e i nomi di dominio. I pacchetti
-\texttt{java.util} e \texttt{java.util.logging} \textbf{non} hanno una vera e
-propria gerarchia, non esistono sotto-pacchetti o relazioni fra pacchetti.
-Tuttavia, i nomi sono scelti adoperando una \emph{convenzione}, in particolare,
-vengono adoperati raggruppando i pacchetti secondo una logica non casuale.
-I pacchetti sono utili per evitare il \emph{conflitto fra nomi}: due classi
-aventi lo stesso nome, infatti, non potrebbero essere ``utilizzate'' assieme,
-se non all'interno di differenti pacchetti. I nomi di pacchetti sono,
-solitamente, in lowercase, con \emph{reverse institution/company name,
-product/internal product organization}, dove il dominio con maggior grado nella
-``gerarchia'' è collocato più a sinistra. I nomi dei pacchetti hanno anche un
-forte impatto nell'organizzazione dei file e delle directory di lavoro Java.
+I \textbf{pacchetti (packages)} sono un \emph{insieme} di classi con un nome. All'interno di un package, il modificatore di accesso di default rende visibile tale identificatore \emph{soltanto all'interno del pacchetto}. Gli identificatori di default, benché abbiano un comportamento peculiare all'interno del pacchetto, sono molto rari e tendono a sfavorire la modularità, poiché non hanno un comportamento modulare corretto. Infatti, gli identificatori di default si trovano ad essere una sorta di ``via di mezzo'' fra l'identificatore \texttt{private} e l'identificatore \texttt{public}: in questa maniera, tendono a non avere un comportamento netto e ben definito. Il nome di un pacchetto, dal punto di vista sintattico, è una sequenza di lettere (token) separata da punti. Non c'è una gerarchia formale, sebbene i nomi di pacchetti possano suggerire diversamente, per esempio osservando la somiglianza fra i nomi di pacchetti e i nomi di dominio. I pacchetti \texttt{java.util} e \texttt{java.util.logging} \textbf{non} hanno una vera e propria gerarchia, non esistono sotto-pacchetti o relazioni fra pacchetti. Tuttavia, i nomi sono scelti adoperando una \emph{convenzione}, in particolare, vengono adoperati raggruppando i pacchetti secondo una logica non casuale. I pacchetti sono utili per evitare il \emph{conflitto fra nomi}: due classi aventi lo stesso nome, infatti, non potrebbero essere ``utilizzate'' assieme, se non all'interno di differenti pacchetti. I nomi di pacchetti sono, solitamente, in lowercase, con \emph{reverse institution/company name, product/internal product organization}, dove il dominio con maggior grado nella ``gerarchia'' è collocato più a sinistra. I nomi dei pacchetti hanno anche un forte impatto nell'organizzazione dei file e delle directory di lavoro Java.
 
 \subsection{Java modules}
 
-I \textbf{moduli}, introdotti in Java dalla versione $9$, sono molto potenti
-per costruire software estremamente complesso. Tuttavia, in questo corso
-saranno ignorati.
+I \textbf{moduli}, introdotti in Java dalla versione 9, sono molto potenti per costruire software estremamente complesso. Tuttavia, in questo corso saranno ignorati.
 
 \section{Fully Qualified Name}
 
-Unendo il nome della classe al nome del pacchetto si ottiene il \textbf{Fully
-Qualified Name}, identificatore \emph{univoco} della classe. Supponendo,
-dunque, per esempio un nome di pacchetto \texttt{java.net} ed una classe in
-esso contenuta di nome \texttt{Socket}, il FQN corrispondente sarà
-\texttt{java.net.Socket}. Mediante il FQN, ogni classe può essere univocamente
-riferita da qualunque punto del codice. Ad esempio, nel frammento
+Unendo il nome della classe al nome del pacchetto si ottiene il \textbf{Fully Qualified Name}, identificatore \emph{univoco} della classe. Supponendo, dunque, per esempio un nome di pacchetto \texttt{java.net} ed una classe in esso contenuta di nome \texttt{Socket}, il FQN corrispondente sarà \texttt{java.net.Socket}. Mediante il FQN, ogni classe può essere univocamente riferita da qualunque punto del codice. Ad esempio, nel frammento
 
 \begin{lstlisting}
 double r = 10;
